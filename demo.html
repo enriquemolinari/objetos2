@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CI and Static Analysis</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
+
+    <style>
+      .simplecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .inlinecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .reveal section code.small1 {
+        font-size: 0.8em;
+      }
+
+      div.line {
+        border-bottom: 1px solid;
+        border-color: lightgray;
+      }
+
+      .box3 {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box2 {
+        width: 720px;
+        padding: 15px;
+        margin-left: 100px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box {
+        width: 910px;
+        /*border: 15px solid green;*/
+        padding: 15px;
+        margin: 2px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+        /*font-family: 'Times New Roman', Times, serif;*/
+      }
+
+      .box4 {
+        width: 730px;
+        padding: 15px;
+        margin-left: 2px;
+        margin-top: 10px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 30pt;
+        font-weight: bold;
+      }
+      .titulobox {
+        width: 890px;
+      }
+
+      .portada .subtitulo {
+        color: lightgray;
+      }
+
+      .autor {
+        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+        font-size: 15pt;
+      }
+
+      .fechahoy {
+        color: gray;
+      }
+
+      .titulo {
+        font-size: 50pt;
+      }
+
+      .titulomaschico {
+        font-size: 30pt;
+      }
+
+      .resaltar {
+        color: #4a4e69;
+      }
+
+      p.chico {
+        font-size: 24pt;
+      }
+
+      span.itali {
+        font-family: cursive;
+      }
+
+      p.maschico {
+        font-size: 20pt;
+      }
+      li.maschico {
+        font-size: 20pt;
+      }
+
+      p.alineadoIzq {
+        text-align: left;
+      }
+
+      p.maschicoYalineadoIzq {
+        font-size: 12pt;
+        text-align: left;
+      }
+
+      p.chicoYalineadoIzq {
+        font-size: 24pt;
+        text-align: left;
+      }
+
+      .reveal .slide-number {
+        background-color: white;
+        color: black;
+      }
+
+      .reveal .footer {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        font-size: 0.5em;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="footer">Integración y Delivery Continuo</div>
+      <div class="menubar line">
+        <div class="slide-number"></div>
+        <ul class="menu">
+          <li><a href="#/cd">CI/CD</a></li>
+          <li><a href="#/ci">Integración Continua</a></li>
+          <li><a href="#/ae">Análisis Estático</a></li>
+          <li><a href="#/test">Test y Cobertura</a></li>
+          <li><a href="#/maven">Maven</a></li>
+          <li><a href="#/nube">En la Nube</a></li>
+          <li><a href="#/medallas">Medallas</a></li>
+          <li><a href="#/deploy">Deployment</a></li>
+        </ul>
+        <div class="placeholder"></div>
+      </div>
+      <div class="slides">
+        <section
+          style="text-align: left"
+          data-transition="fade"
+          data-state="hide-menubar no-title-footer"
+        >
+          <div class="box">
+            <p>Integración y Delivery Continuo</p>
+          </div>
+          <div class="box4">
+            <span>+ Verificación de Calidad de Código Fuente</span>
+          </div>
+          <div class="titulobox">
+            Entendamos cómo trabajar en equipo respentando cierto nivel de
+            calidad de código.
+          </div>
+          <p class="autor">Enrique Molinari</p>
+          <p id="hoy" class="autor fechahoy"></p>
+        </section>
+
+        <!--        <section id="intro">
+          <p class="fragment">CI/CD tools: jenkins, github actions, gitlab, Travis, etc</p>
+          <p class="fragment">No confiamos en nosotros...</p>
+          <p class="fragment">quality wall: static analysis, unit test, integration test, coverage tool</p>
+          <p class="fragment">Static analisis: busca bugs potenciales</p>
+          <p class="fragment">Checkstyle, pmd, cpd (codeclimate copy paste detector tiene), spotbuts, codeclimate, otros</p>
+          <p class="fragment">Linters en JavaScript</p>
+          <p class="fragment">Ejemplo de algun error de cada uno</p>
+          <p class="fragment">Ejemplo suprimir</p>
+          <p class="fragment">badges</p>
+        </section>
+        -->
+        <section id="cd">
+          <p class="titulo">Integración y Delivery Continuo</p>
+          <p class="fragment">¿De qué se trata?</p>
+          <p class="fragment">
+            Proceso automático que permite poner en PROD una nueva versión de
+            una aplicación o servicio.
+          </p>
+          <p class="fragment">
+            Esto requiere previamente verificar el funcionamiento mediantes
+            testing automatizado y además la calidad del código fuente.
+          </p>
+        </section>
+
+        <section id="cd">
+          <p class="titulo">CI / CD</p>
+          <img src="imgs/ci-cd.png" />
+        </section>
+
+        <section id="ci">
+          <div class="box2">Integración Continua</div>
+        </section>
+
+        <section id="ci">
+          <p class="titulo">Integración Continua</p>
+          <img src="imgs/ci.png" />
+        </section>
+
+        <section id="ci" data-auto-animate>
+          <p class="titulo">Integración Continua: tools!</p>
+          <img src="imgs/jenkins.png" />
+          <img src="imgs/github.jpg" />
+          <img src="imgs/gitlab.png" />
+          <img src="imgs/travisci.png" />
+          <img src="imgs/teamcity.png" />
+          <img src="imgs/circleci.png" />
+        </section>
+
+        <section id="ci" data-auto-animate>
+          <p>Nosotros vamos a utilizar:</p>
+          <img src="imgs/github.jpg" />
+          <p class="fragment"><img src="imgs/github-actions.png" /></p>
+        </section>
+
+        <section id="ci" data-auto-animate>
+          <p>¿Cómo incorporamos Github Actions a un proyecto?</p>
+          <p class="fragment"><img src="imgs/github-actions.png" /></p>
+        </section>
+
+        <section id="ci">
+          <ol>
+            <li class="maschico">
+              Crear el directorio
+              <span class="inlinecode">.github/workflows</span> en la raiz del
+              proyecto.
+            </li>
+            <li class="maschico fragment">
+              Allí adentro colocamos el archivo YAML (.yml) que contiene las
+              instrucciones del proceso de integración continua. Veamos un
+              ejemplo:
+            </li>
+          </ol>
+          <pre
+            class="fragment"
+          ><code class="small1" data-trim data-noescape data-line-numbers="1|2|3-4|5-6|7|8-9|10-12|13-16|18">name: Demo
+on: [push]
+# un workflow puede tener mas de un job
+jobs:
+ # nombre del único job en este workflow 
+ demo-job:
+  runs-on: ubuntu-latest
+  # representa una secuencia de tareas a ejecutar
+  steps:
+   # nombre del step
+   - name: Check out repository code
+     uses: actions/checkout@v3
+   # nombre del step
+   - name: List files in the repository
+     run: |
+      ls ${{ github.workspace }}
+   # Simplemente ejecuta un echo   
+   - run: echo "This job's status is ${{ job.status }}."</code></pre>
+        </section>
+
+        <section id="ae">
+          <div class="box2">Análisis Estático de Código Fuente</div>
+        </section>
+
+        <section id="ae">
+          <p class="titulo">Análisis Estático de Código Fuente</p>
+          <p class="fragment">
+            Como parte de la <b>Quality Net</b> existen herramientas que nos
+            permiten, automáticamente (ideal para un proceso de CI), realizar
+            ciertos chequeos sobre los fuentes, en dos cuestiones:
+          </p>
+          <ol>
+            <li class="fragment">
+              Estilo de como escribimos código. Trabajando en equipo necesitamos
+              consistencia.
+            </li>
+            <li class="fragment">Potenciales bugs.</li>
+          </ol>
+        </section>
+
+        <section id="ae">
+          <p class="titulo">Verificación de Estilo con:</p>
+          <img class="fragment" src="imgs/checkstyle.png" />
+          <p class="fragment">
+            ¿Usamos espacios o tabs para las tabulaciones? ¿Cuantos niveles?
+          </p>
+          <p class="fragment">
+            ¿Cómo escribimos <span class="simplecode">if</span>s,
+            <span class="simplecode">for</span>s o
+            <span class="simplecode">while</span>s? ¿Usamos llaves si tienen una
+            sola sentencia?
+          </p>
+          <p class="fragment">
+            ¿Donde y cuando usamos mayúsculas? ¿minúsculas?
+          </p>
+        </section>
+
+        <section id="ae">
+          <p class="titulo">Verificación de Estilo con:</p>
+          <img class="fragment" src="imgs/checkstyle.png" />
+          <p class="fragment">
+            Vamos a utilizar la Guía de Estilos de
+            <a href="https://google.github.io/styleguide/javaguide.html"
+              >Google</a
+            >.
+          </p>
+        </section>
+
+        <section id="ae">
+          <img src="imgs/pmd.png" />
+          <p>Busca <b>potenciales</b> fallas o bugs. ¿Cuáles?</p>
+          <p class="fragment">
+            <a href="https://pmd.github.io/latest/pmd_rules_java.html"
+              >Reglas PMD</a
+            >
+          </p>
+          <p class="fragment">
+            También detecta <b>código duplicado</b>!
+            <a href="https://pmd.github.io/latest/pmd_userdocs_cpd.html"
+              >Copy/Paste Detector</a
+            >
+            (CPD).
+          </p>
+        </section>
+
+        <section id="ae">
+          <img src="imgs/spotbugs.png" />
+          <p>Similar a PMD, busca potenciales bugs. ¿Cuáles?</p>
+          <p class="fragment">
+            Código que permite SQL Injection y recursos (BDs) no cerrados
+            correctamente son algunos de los diferentes a PMD.
+          </p>
+          <a
+            class="fragment"
+            href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html"
+            >Reglas Spotbugs</a
+          >
+        </section>
+
+        <section id="ae">
+          <p class="titulo">Falsos positivos</p>
+          <p class="fragment">
+            Tanto PMD como Spotbugs pueden reportar falsos positivos. Usando
+            anotaciones puedo quitar la verificación de cierto bloque de código,
+            en PMD sería:
+          </p>
+          <pre class="fragment">
+          <code class="small1" data-trim data-noescape>@SuppressWarnings("PMD.UnusedLocalVariable")
+public class Bar {
+ void bar() {
+  int foo;
+ }
+}</code></pre>
+        </section>
+
+        <section id="ae">
+          <p class="titulo">Falsos positivos</p>
+          <p class="fragment">
+            En Spotbugs, primero debe crear la anotación y luego usarla. Lo que
+            vemos aca es un falso positivo real!.
+          </p>
+          <pre class="fragment">
+          <code class="small1" data-trim data-noescape>@Retention(RetentionPolicy.CLASS)
+public @interface SuppressFBWarnings {
+ String[] value() default {};
+ String justification() default "";
+}
+@SuppressFBWarnings(value = {"EI_EXPOSE_REP2"})
+public JpaSalesOnline(EntityManager em) {
+ this.em = em;
+}</code></pre>
+        </section>
+
+        <section id="test">
+          <p class="titulo">Testing y Cobertura</p>
+          <p class="fragment">
+            Como parte de la <b>Quality Net</b> también necesitamos tener
+            <b>testing automatizado</b> y <b>medir</b> su cobertura.
+          </p>
+        </section>
+
+        <section id="test">
+          <p class="titulo">Categorías de Test y Herramientas</p>
+          <p class="fragment">
+            <b>Unit Testing</b>: JUnit (no solo modelo, controllers y servicios
+            es posible también).
+          </p>
+          <p class="fragment">
+            <b>Integration Tests</b>: Cada back-end framework provee
+            facilidades.
+          </p>
+          <p class="fragment">
+            <b>UI Unit Tests</b> (Javascript):
+            <a href="https://jestjs.io/">Jest</a>,
+            <a href="https://mochajs.org/">Mocha</a>,
+            <a href="https://jasmine.github.io/">Jasmine</a>.
+          </p>
+          <p class="fragment">
+            <b>End-to-End Tests</b>:
+            <a href="https://playwright.dev/">Playwright</a>,
+            <a href="https://www.cypress.io/">Cypress</a>,
+            <a href="https://www.protractortest.org/#/">Protractor</a> (solo con
+            Angular), <a href="https://www.selenium.dev/">Selenium</a>.
+          </p>
+        </section>
+
+        <section id="test">
+          <p class="titulo">Mike Cohn's tests pyramid</p>
+          <!--           <img src="imgs/jacoco.jpeg" /> -->
+          <img src="imgs/tests-piramid.png" />
+        </section>
+
+        <section id="test">
+          <p class="titulo">Midiendo Cobertura</p>
+          <!--           <img src="imgs/jacoco.jpeg" /> -->
+          <img src="imgs/jacoco-results.png" />
+          <p class="fragment">Entre 70% y 80% de cobertura es aceptable.</p>
+        </section>
+
+        <section id="maven">
+          <p class="titulo">Maven</p>
+          <p class="fragment">
+            Permite manejar dependencias, ejecutar builds, generar reportes y
+            documentación de un proyecto de software.
+          </p>
+          <p class="fragment">
+            A travez de sus <b>plugins</b> podemos ejecutar Checkstyle, PMD,
+            Spotbugs, Tests y generar documentación de calidad de código y
+            cobertura. Lo podemos correr local y por supuesto también desde
+            Github Actions.
+          </p>
+          <p class="fragment">
+            Repo de ejemplo:
+            <a href="https://github.com/enriquemolinari/static-analysis"
+              >Static Analisys</a
+            >
+          </p>
+        </section>
+
+        <section id="nube">
+          <div class="box2">Quality Net en la Nube!</div>
+        </section>
+
+        <section id="nube">
+          <p class="titulo">Quality Net en la Nube!</p>
+          <p class="fragment">
+            <a href="https://www.codacy.com/">Codacy</a>: Checkstyle, PMD,
+            Spotbugs y similares para otros Lenguajes de Programación en la
+            nube.
+          </p>
+          <p class="fragment">
+            <a href="https://codeclimate.com/">Code Climate</a>: Tiene una
+            métrica de mantenibilidad basada en 10 puntos:
+            <a
+              href="https://docs.codeclimate.com/docs/configuring-your-analysis#section-maintainability-checks"
+              >Maintainability Checks</a
+            >.
+          </p>
+          <p class="fragment">
+            <a href="https://about.codecov.io/">Codecov</a>: Cobertura.
+            <a href="https://lgtm.com/">LGTM</a>: Security, finding
+            vulnerabilities.
+          </p>
+          <p class="fragment">
+            Se loguean (a travéz github) y accede a tu repo para analizarlo.
+          </p>
+        </section>
+
+        <section id="medallas">
+          <div class="box2">Medallas</div>
+          <p>Mostra qué dicen las métricas de calidad</p>
+          <p>sobre tu código.</p>
+        </section>
+
+        <section id="medallas">
+          <p class="titulo">Badges (medallas)</p>
+          <img class="fragment" src="imgs/badge-build.png" />
+          <p class="fragment">Veamos algunos ejemplos de repos open source:</p>
+          <p class="fragment">
+            <a href="https://github.com/hibernate/">Hibernate</a>.
+            <a href="https://github.com/apache/commons-lang">commons-lang</a>.
+            <a href="https://github.com/javalin/javalin">Javalin</a>.
+            <a href="https://github.com/spring-projects/spring-framework"
+              >Spring</a
+            >. <a href="https://github.com/enriquemolinari/jqueue">JQueue</a>.
+          </p>
+        </section>
+
+        <section id="deploy">
+          <div class="box2">Deployment</div>
+          <p>Con cero downtime!</p>
+        </section>
+
+        <section id="deploy">
+          <p class="titulo">Blue/Green Deployment</p>
+          <p class="fragment">
+            Hay que tener 2 ambientes de producción completos e identicos.
+          </p>
+          <p class="fragment">
+            Uno que esta siendo utilizado por los usuarios.
+          </p>
+          <p class="fragment">
+            Y otro que va a ser utilizado luego del nuevo deployment.
+          </p>
+        </section>
+
+        <section id="deploy">
+          <p class="titulomaschico">Blue/Green Deployment - Shared Database</p>
+          <img src="imgs/bluegreendeploy2.png" />
+        </section>
+
+        <section id="deploy">
+          <p class="titulo">Blue/Green Deployment - Shared Database</p>
+          <p class="chico fragment">
+            Requiere que los cambios de base de datos, scripts de DDL y DML,
+            sean compatibles con la versión actual de la aplicación.
+          </p>
+          <p class="chico fragment">
+            Primero se corren los scripts de base de datos, sin deployar una
+            nueva versión. La compatibilidad garantiza que la versión actual
+            sigue funcionando.
+          </p>
+          <p class="chico fragment">
+            Luego se deploya la nueva versión de la aplicación en el ambiente
+            blue.
+          </p>
+          <p class="chico fragment">
+            Se prueba y si esta Ok, se cambia el proxy reverso para la nueva
+            versión.
+          </p>
+        </section>
+
+        <section id="deploy">
+          <p class="titulomaschico">Blue/Green Deployment</p>
+          <img src="imgs/bluegreendeploy.png" />
+        </section>
+
+        <section id="deploy">
+          <p class="titulo">Blue/Green Deployment</p>
+          <p class="chico fragment">
+            Requiere mantener las bases de datos de los ambientes green y blue
+            sincronizados mediante replicación.
+          </p>
+        </section>
+
+        <section id="deploy">
+          <p class="titulo">Canary Deployment</p>
+          <img src="imgs/canary-deploy.png" />
+        </section>
+
+        <section id="deploy">
+          <p class="titulo">Canary Deployment</p>
+          <p class="chico fragment">
+            Requiere mantener las bases de datos de los ambientes sincronizados
+            mediante replicación.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/simplemenu/simplemenu.js"></script>
+    <script src="plugin/relativenumber/relativenumber.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>
+      window.onload = function () {
+        let today = new Date().toLocaleDateString();
+        let obj = document.getElementById("hoy");
+        document.getElementById("hoy").innerText = today;
+      };
+
+      Reveal.addEventListener("slidechanged", function (event) {
+        if (event.indexh > 0) {
+          document.querySelector(".reveal .footer").style.display = "block";
+        } else {
+          document.querySelector(".reveal .footer").style.display = "none";
+        }
+      });
+
+      Reveal.addEventListener("ready", function (event) {
+        if (event.indexh === 0)
+          document.querySelector(".reveal .footer").style.display = "none";
+      });
+
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RelativeNumber,
+          Simplemenu,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
+</html>
