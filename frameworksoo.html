@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>Object Calisthenics</title>
+    <title>Frameworks Orientados a Objetos</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -104,7 +104,6 @@
 			}
 
       .autor {
-        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
         font-size: 15pt;
       }
 
@@ -179,16 +178,12 @@
       <div class="menubar line">
         <div class="slide-number"></div>
         <ul class="menu">
-          <li><a href="#/quees">¿Qué es?</a></li>
-          <li><a href="#/r1">Regla #1</a></li>
-          <li><a href="#/r2">Regla #2</a></li>
-          <li><a href="#/r3">Regla #3</a></li>
-          <li><a href="#/r4">Regla #4</a></li>
-          <li><a href="#/r5">Regla #5</a></li>
-          <li><a href="#/r6">Regla #6</a></li>
-          <li><a href="#/r7">Regla #7</a></li>
-          <li><a href="#/r8">Regla #8</a></li>
-          <li><a href="#/r9">Regla #9</a></li>
+          <li><a href="#/quees">¿Qué es un Framework?</a></li>
+          <li><a href="#/quees2">¿Qué es un Framework OO?</a></li>
+          <li><a href="#/frwvslibreria">Framework vs Librería</a></li>
+          <li><a href="#/PuntosExtension">Puntos de Extensión</a></li>
+          <li><a href="#/TiposdeFrameworksOO">Tipos de Frameworks OO</a></li>
+          <li><a href="#/patvsfrw">Patrones vs Frameworks</a></li>
         </ul>
         <div class="placeholder"></div>
       </div>
@@ -205,31 +200,31 @@
           <p id="hoy" class="autor fechahoy"></p>
         </section>
 
-        <section>
+        <section id="quees">
 					<h2>¿Qué es un Framework?</h2>
 				</section>
-				<section>
+				<section id="quees">
 					<h3 class="titulocolor">Un Framework...</h3>
 					<br/>
 					<p class="fragment">Una técnica particular de implementación para construir <strong>familias de aplicaciones</strong></p>
 					<p class="fragment">Familias donde el <strong>dominio del problema</strong> es lo común.</p>
 					<p class="fragment">Familias donde la <strong>infraestructura</strong> es lo común.</p>
 				</section>
-				<section>
+				<section id="quees">
 					<h3 class="titulocolor">Dada una familia de aplicaciones, un Framework...</h3>
 					<ul>
 						<li class="fragment">Representa un <strong>Diseño Común</strong> y una <strong>Implementación parcial</strong> de las aplicaciones dentro de dicha familia.</li>
 						<li class="fragment">Es una solución genérica para un conjunto de problemas similares</li>
 					</ul>
 				</section>
-				<section>
+				<section id="quees">
 					<h3 class="titulocolor">Dada una familia de aplicaciones, un Framework...</h3>
 					<ul>
 						<li class="fragment"><strong>Incompleto por naturaleza</strong>: funcionalidad específica desarrollada por el <w>usuario</w> del framework</li>
 						<li class="fragment">Las "partes" a completar llevan el nombre de <strong>métodos hook</strong> (puntos de extensión o hot spots)</li>
 					</ul>
 				</section>
-				<section>
+				<section id="quees2">
 					<h3 class="titulocolor">Y...<span class="fragment"> ¿Qué es un Framework Orientado a Objetos?</span> </h3>
 					<ul>
 						<li class="fragment">Una <strong>jerarquía de clases (mayormente abstractas)</strong>.</li>
@@ -238,7 +233,7 @@
 						<li class="fragment"><strong>Documentación</strong> de como uso y <u>extiendo</u> el framework.</li>
 					</ul>
 				</section>
-				<section>
+				<section id="quees2">
 					<h3 class="titulocolor">Además... </h3>
 					<ul>
 						<li class="fragment">La funcionalidad <strong>core</strong> de las aplicaciones es implementada por el framework en ésta jerarquía de clases abstractas.</li>
@@ -246,7 +241,7 @@
 						<li class="fragment">El framework también puede proveer clases concretas como librerías.</li>
 					</ul>
 				</section>
-				<section>
+				<section id="quees2">
 					<h3 class="titulocolor">Frameworks OO</h3>
 					<p><i><strong>"Programando para customizar"</strong></i></p>
 					<div style="position:relative">
@@ -259,13 +254,13 @@
     			</div>
 				</section>
 
-				<section>
+				<section id="quees2">
 					<h3 class="titulocolor">Frameworks OO</h3>
 					<p><i>Otra vista del código del framwork vs el código de la aplicación</i></p>
 		      	<img src="imgs/framework-app2.png" style="background:none; border:none; box-shadow:none;">
 				</section>
 
-				<section>
+				<section id="quees2">
 					<h3 class="titulocolor">Framworks OO</h3>
 					<p><i><strong>Si implementamos una aplicación usando un framework tenemos: </strong></i></p>
 					<ul>
@@ -275,40 +270,41 @@
 					</ul>
 				</section>
 
-				<section>
+				<section id="quees2">
 					<h3 class="titulocolor">¿Por qué la existencia de Frameworks?</h3>
 					<blockquote class="fragment"><strong>Reuso de Software</strong></blockquote>
 					<p class="fragment">El mayor esfuerzo que hacemos los programadores cuando desarrollamos una aplicación es pensar en el diseño de alto nivel que ésta tendra. Los frameworks son una forma de reutilizar ese esfuerzo intelectual.</p>
 					<p class="fragment">Los frameworks brindan <strong>reuso de diseño e implementación</strong>.</p>
 				</section>
 
-				<section>
+				<section id="frwvslibreria">
 					<h3 class="titulocolor">¿Qué distingue un Framework de una Librería?</h3>
 					<p class="fragment">En ambos tengo reuso de código...</p>
 					<p class="fragment">Principalmente la <strong>Inversión de control</strong></p>
 		      <img class="fragment" src="imgs/frw-vs-library.png" style="background:none; border:none; box-shadow:none;">
 				</section>
 
-				<section>
+				<section id="PuntosExtension">
 					<h3 class="titulocolor">Puntos de Extensión</h3>
 					<p class="fragment">"Separa el código que cambia de aquel que no cambia"</p>
 					<p class="fragment">Son las partes del framework donde un usuarios/desarrollador del framework puede modificar o agregar comportamiento.</p>
 					<p class="fragment"><strong>Todo aquello cómun a las aplicaciones de una familia lo implementa el framework, las diferencias se implementan a travéz de los puntos de extensión</strong>.</p>
 				</section>
 
-				<section>
+        
+				<section id="TiposdeFrameworksOO">
 					<h3 class="titulocolor">Dos Tipos de Frameworks</h3>
 					<p class="fragment"><strong>Caja Blanca</strong>: Aquellos donde los puntos de extensión se basan en la <strong>herencia</strong> (Usando Template Method)</p>
 					<p class="fragment"><strong>Caja Negra</strong>: Aquellos donde los puntos de extensión se basan en <strong>composición</strong></p>
 					<p class="fragment"><strong>Caja Gris</strong>: Puntos de extensión de <strong>ambas</strong> formas.</p>
 				</section>
 
-				<section>
+				<section id="TiposdeFrameworksOO">
 					<h3 class="titulocolor">Framworks OO</h3>
 					<blockquote><strong>Veamos un ejemplo en Eclipse...</strong></blockquote>
 				</section>
 
-				<section>
+				<section id="patvsfrw">
 					<h3 class="titulocolor">Patrones vs Frameworks</h3>
 					<div class="column-container">
 						<div class="col">
