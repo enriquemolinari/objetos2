@@ -1,4 +1,4 @@
-# Curso de Grado - Programación Orientada a Objetos II
+# Programación Orientada a Objetos II
 
 ## ¿Queres correr este proyecto?
 

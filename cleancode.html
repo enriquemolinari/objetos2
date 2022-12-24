@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Clean Code</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
+
+    <style>
+      .simplecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .inlinecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .reveal section code.small1 {
+        font-size: 0.8em;
+      }
+
+      div.line {
+        border-bottom: 1px solid;
+        border-color: lightgray;
+      }
+
+      .box3 {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box2 {
+        width: 720px;
+        padding: 15px;
+        margin-left: 100px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box {
+        width: 800px;
+        /*border: 15px solid green;*/
+        padding: 15px;
+        margin: 2px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+        /*font-family: 'Times New Roman', Times, serif;*/
+      }
+
+      .box4 {
+        width: 730px;
+        padding: 15px;
+        margin-left: 2px;
+        margin-top: 10px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 30pt;
+        font-weight: bold;
+      }
+      .titulobox {
+        width: 890px;
+      }
+
+      .portada .subtitulo {
+        color: lightgray;
+      }
+
+      .autor {
+        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+        font-size: 15pt;
+      }
+
+      .fechahoy {
+        color: gray;
+      }
+
+      .titulo {
+        font-size: 50pt;
+      }
+
+      .titulomaschico {
+        font-size: 30pt;
+      }
+
+      .resaltar {
+        color: #4a4e69;
+      }
+
+      p.chico {
+        font-size: 24pt;
+      }
+
+      span.itali {
+        font-family: cursive;
+      }
+
+      p.maschico {
+        font-size: 20pt;
+      }
+
+      span.maschico {
+        font-size: 20pt;
+      }
+
+      li.maschico {
+        font-size: 20pt;
+      }
+
+      p.alineadoIzq {
+        text-align: left;
+      }
+
+      p.maschicoYalineadoIzq {
+        font-size: 12pt;
+        text-align: left;
+      }
+
+      p.chicoYalineadoIzq {
+        font-size: 24pt;
+        text-align: left;
+      }
+
+      .reveal .slide-number {
+        background-color: white;
+        color: black;
+      }
+
+      .reveal .footer {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        font-size: 0.5em;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="footer">Clean Code</div>
+      <div class="menubar line">
+        <div class="slide-number"></div>
+        <ul class="menu">
+          <li><a href="#/nombres">Nombres específicos</a></li>
+          <li><a href="#/legibilidad">Legibilidad I</a></li>
+          <li><a href="#/numeros">Números Mágicos</a></li>
+          <li><a href="#/legibilidad2">Legibilidad en Condicionales</a></li>
+        </ul>
+        <div class="placeholder"></div>
+      </div>
+      <div class="slides">
+        <section
+          style="text-align: left"
+          data-transition="fade"
+          data-state="hide-menubar no-title-footer"
+        >
+          <div class="box">
+            <p>Código Limpio (Clean Code)</p>
+          </div>
+          <div class="titulobox">By Robert C. Martin</div>
+          <p class="autor">Enrique Molinari</p>
+          <p id="hoy" class="autor fechahoy"></p>
+        </section>
+
+        <section id="nombres">
+          <h3>Nombres de variables...</h3>
+          <pre
+            class="fragment"
+          ><code class="java" code-trim data-noescape contenteditable style="font-size:18px">//descripción de la máquina
+String mDesc;
+//Suma acumulada
+int s;
+// Color de ojos
+String cOjos;
+//Cotización del Dolar
+float aux;
+</code></pre>
+        </section>
+
+        <section id="nombres">
+          <h3>Revelando su intención</h3>
+          <pre
+            class="fragment"
+          ><code class="java" code-trim data-noescape contenteditable style="font-size:18px">String descripcionDeLaMaquina;
+int sumaAcumulada;
+String colorDeOjos;
+float cotizaciónDelDolar;
+</code></pre>
+        </section>
+        <section id="nombres">
+          <h3>No ser genéricos...</h3>
+          <pre
+            class="fragment"
+          ><code class="java" code-trim data-noescape contenteditable style="font-size:18px">//Ejecutar el cálculo de la nómina
+void ejecutar();
+//calcular impuesto a las ganancias
+float calcular();
+// renderizar imagen
+void renderizar();
+</code></pre>
+        </section>
+
+        <section id="nombres">
+          <h3>Sino bien específicos...</h3>
+          <pre
+            class="fragment"
+          ><code class="java" code-trim data-noescape contenteditable style="font-size:18px">void ejecutarCalculoDeNomina();
+float calcularImpuestoALasGanancias();
+void renderizarImagen();
+</code></pre>
+        </section>
+
+        <section id="legibilidad">
+          <h3>Mejorando la Legibilidad...</h3>
+          <pre
+            class="fragment"
+          ><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+ ...
+ double calcularCostoDelViaje() {
+  if (hora > 22:00 || hora < 06:00) {
+   return distanciaRecorrida * 5;
+  } else {
+   return distanciaRecorrida * 3;
+  }
+ }
+}
+</code></pre>
+          <p class="fragment">
+            ¿Qué significa esta condición en las reglas del negocio?
+          </p>
+        </section>
+
+        <section id="legibilidad">
+          <h3>Mejorando la Legibilidad...</h3>
+          <pre
+            class="fragment"
+          ><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+ ...
+ double calcularCostoDelViaje() {
+  if (esHorarioNocturno()) {
+   return distanciaRecorrida * 5;
+  } else {
+   return distanciaRecorrida * 3;
+  }
+ }
+ private boolean esHorarioNocturno() {
+  return (hora > 22:00 || hora < 06:00);
+ }
+}
+</code></pre>
+        </section>
+
+        <section id="numeros">
+          <h3>Números Mágicos...</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+ ...
+ double calcularCostoDelViaje() {
+  if (esHorarioNocturno()) {
+   return distanciaRecorrida * <span class="fragment strike" data-fragment-index="2">5</span> <span class="fragment" data-fragment-index="3">COEFICIENTE_VIAJE_NOCTURNO</span>;
+  } else {
+   return distanciaRecorrida * 3;
+  }
+ }
+}
+</code></pre>
+        </section>
+
+        <section id="legibilidad2">
+          <h3>Simplificando Condicionales</h3>
+          <p>
+            Ahora los domingos diurnos se cobra un poco mas que el diurno no
+            domingo
+          </p>
+        </section>
+
+        <section id="legibilidad2">
+          <h3>Simplificando Condicionales</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+ ...
+ double calcularCostoDelViaje() {
+  if (esHorarioNocturno()) {
+   return distanciaRecorrida * COEFICIENTE_VIAJE_NOCTURNO;
+  } else {
+    if (esDomingo()) {
+     return distanciaRecorrida * COEFICIENTE_VIAJE_DOMINGO;
+    } else {
+     return distanciaRecorrida * COEFICIENTE_VIAJE_DIURNO;
+   }
+  }
+ }
+}
+</code></pre>
+        </section>
+
+        <section id="legibilidad2">
+          <h3>Simplificando Condicionales</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+ ...
+ double calcularCostoDelViaje() {
+  if (esHorarioNocturno())
+   return distanciaRecorrida * COEFICIENTE_VIAJE_NOCTURNO;
+
+  if (esDomingo())
+   return distanciaRecorrida * COEFICIENTE_VIAJE_DOMINGO;
+
+  return distanciaRecorrida * COEFICIENTE_VIAJE_DIURNO;
+ }
+}
+</code></pre>
+        </section>
+
+        <section id="legibilidad2">
+          <h3>Simplificando Condicionales Cont.</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">public class Dni {
+ public Dni(String dni) {
+  if (dni != null) {
+    if (!dni.empty()) {
+     if (lenPermitido(dni)) {
+      if (todosNumeros(dni)) {
+        this.dni = dni;
+      }
+      else {
+       throw new Ex("Debe ingresar números solamente");
+      }
+     } else {
+      throw new Ex("El largo del dni no puede ser menor a 3 ni mayor a 10");
+     }
+    } else {
+     throw new Ex("Dni no puede ser vacío");
+    }
+   } else {
+    throw new Ex("Dni no puede ser nulo");
+   }
+  }
+}</code></pre>
+        </section>
+        <section id="legibilidad2">
+          <h3>Simplificando Condicionales Cont.</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">public class Dni {
+ public Dni(String dni) {
+  if (dni == null)
+    throw new Ex("Dni no puede ser nulo");
+  if (dni.empty())
+    throw new Ex("Dni no puede ser vacío");
+  if (!lenPermitido(dni))
+    throw new Ex("El largo del dni no puede ser menor a 3 ni mayor a 10");
+  if (!todosNumeros(dni)) {
+    throw new Ex("Debe ingresar números solamente");
+
+  this.dni = dni;
+}</code></pre>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/simplemenu/simplemenu.js"></script>
+    <script src="plugin/relativenumber/relativenumber.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>
+      window.onload = function () {
+        let today = new Date().toLocaleDateString();
+        let obj = document.getElementById("hoy");
+        document.getElementById("hoy").innerText = today;
+      };
+
+      Reveal.addEventListener("slidechanged", function (event) {
+        if (event.indexh > 0) {
+          document.querySelector(".reveal .footer").style.display = "block";
+        } else {
+          document.querySelector(".reveal .footer").style.display = "none";
+        }
+      });
+
+      Reveal.addEventListener("ready", function (event) {
+        if (event.indexh === 0)
+          document.querySelector(".reveal .footer").style.display = "none";
+      });
+
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RelativeNumber,
+          Simplemenu,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
+</html>

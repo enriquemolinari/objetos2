@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Object Calisthenics</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
+
+    <style>
+    .tachado {
+      text-decoration: line-through;
+    }
+    .simplecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .inlinecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .reveal section code.small1 {
+        font-size: 0.8em;
+      }
+
+      div.line {
+        border-bottom: 1px solid;
+        border-color: lightgray;
+      }
+
+      .box3 {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box2 {
+        width: 720px;
+        padding: 15px;
+        margin-left: 100px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box {
+        width: 560px;
+        /*border: 15px solid green;*/
+        padding: 15px;
+        margin: 2px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+        /*font-family: 'Times New Roman', Times, serif;*/
+      }
+
+      .box4 {
+        width: 730px;
+        padding: 15px;
+        margin-left: 2px;
+        margin-top: 10px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 30pt;
+        font-weight: bold;
+      }
+      .titulobox {
+        width: 890px;
+      }
+
+      .portada .subtitulo {
+        color: lightgray;
+      }
+
+      .autor {
+        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+        font-size: 15pt;
+      }
+
+      .fechahoy {
+        color: gray;
+      }
+
+      .titulo {
+        font-size: 50pt;
+      }
+
+      .titulomaschico {
+        font-size: 30pt;
+      }
+
+      .resaltar {
+        color: #4a4e69;
+      }
+
+      p.chico {
+        font-size: 24pt;
+      }
+
+      span.itali {
+        font-family: cursive;
+      }
+
+      p.maschico {
+        font-size: 20pt;
+      }
+
+      span.maschico {
+        font-size: 20pt;
+      }
+
+      li.maschico {
+        font-size: 20pt;
+      }
+
+      p.alineadoIzq {
+        text-align: left;
+      }
+
+      p.maschicoYalineadoIzq {
+        font-size: 12pt;
+        text-align: left;
+      }
+
+      p.chicoYalineadoIzq {
+        font-size: 24pt;
+        text-align: left;
+      }
+
+      .reveal .slide-number {
+        background-color: white;
+        color: black;
+      }
+
+      .reveal .footer {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        font-size: 0.5em;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="footer">Object Calisthenics</div>
+      <div class="menubar line">
+        <div class="slide-number"></div>
+        <ul class="menu">
+          <li><a href="#/quees">¿Qué es?</a></li>
+          <li><a href="#/r1">Regla #1</a></li>
+          <li><a href="#/r2">Regla #2</a></li>
+          <li><a href="#/r3">Regla #3</a></li>
+          <li><a href="#/r4">Regla #4</a></li>
+          <li><a href="#/r5">Regla #5</a></li>
+          <li><a href="#/r6">Regla #6</a></li>
+          <li><a href="#/r7">Regla #7</a></li>
+          <li><a href="#/r8">Regla #8</a></li>
+          <li><a href="#/r9">Regla #9</a></li>
+        </ul>
+        <div class="placeholder"></div>
+      </div>
+      <div class="slides">
+        <section id="quees"
+          style="text-align: left"
+          data-transition="fade"
+          data-state="hide-menubar no-title-footer"
+        >
+          <div class="box">
+            <p>Object Calisthenics</p>
+          </div>
+          <div class="titulobox">By Jeff Bay</div>
+          <p class="autor">Enrique Molinari</p>
+          <p id="hoy" class="autor fechahoy"></p>
+        </section>
+
+        <section id="quees">
+          <h3>¿Calistenia?</h3>
+          <p>La calistenia es un sistema de ejercicios físicos con el propio peso corporal. En este sistema, el interés está en los movimientos de las cadenas musculares que componen nuestro cuerpo.</p>
+        </section>
+
+        <section id="quees"  data-auto-animate="fade-out">
+          <h3>¿Calistenia en Objetos?</h3>
+          <p class="fragment">Más buenas prácticas, algo ya vimos. Ahora resumido en <u>9 reglas</u>!</p>
+          <p class="fragment">Jeff Bay propone como ejercicio agarrar un proyecto chico y seguirlo a rajatabla. Uno. Luego en otros se pueden usar de referencia.</p>
+        </section>        
+        <section id="quees"  data-auto-animate="fade-in">
+          <h3>¿Calistenia en Objetos?</h3>
+          <img
+          src="imgs/object-calistenia-book-cover.jpg"
+          width="300"
+          height="383"
+        />
+          </section>        
+
+
+        <section id="r1">
+          <h3>Regla #1</h3>
+          <h3>Un solo nivel de indentación por método</h3>
+        </section>
+  
+        <section id="r1">
+          <p class="titulochico">Un solo nivel de indentación por método</p>
+          <pre><code class="java" code-trim data-noescape contenteditable data-line-numbers="1-6|1-8|1-20">class Board {
+  ...
+  String board() {
+    StringBuffer buf = new StringBuffer();
+    // 0 
+    for (int i = 0; i < 10; i++) {
+      // 1
+      for (int j = 0; j < 10; j++)
+        // 2   
+        buf.append(data[i][j]);
+        buf.append(“\n”);
+      }
+      return buf.toString();
+    }
+  } 
+  </code></pre>
+          <p class="fragment">Usemos <b>Extract Method</b> para dejar solo una indentación por método.</p>
+        </section>
+  
+        <section id="r1">
+          <h3>Un solo nivel de indentación por método</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Board {
+    public String board() {
+     StringBuilder buf = new StringBuilder();
+     collectRows(buf);
+     return buf.toString();
+    }
+    private void collectRows(StringBuilder buf) {
+     for (int i = 0; i < 10; i++) {
+       collectRow(buf, i);
+     }
+    }
+    private void collectRow(StringBuilder buf, int row) {
+      for (int i = 0; i < 10; i++) {
+        buf.append(data[row][i]);
+      }
+      buf.append("\n");
+    }
+}</code></pre>
+        </section>
+  
+        <section id="r2">
+          <h3>Regla #2</h3>
+          <h3>No utilizar la palabra reservada "else"</h3>
+        </section>
+          <section id="r2">
+            <h3>No utilizar la palabra reservada "else"</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+   ...
+   double calcularCostoDelViaje() {
+    if (esHorarioNocturno()) {
+     return distanciaRecorrida * COEFICIENTE_VIAJE_NOCTURNO;
+    } else {
+      if (esDomingo()) {
+       return distanciaRecorrida * COEFICIENTE_VIAJE_DOMINGO;
+      } else {
+       return distanciaRecorrida * COEFICIENTE_VIAJE_DIURNO;
+     }
+    }
+   }
+  }
+  </code></pre>
+          </section>
+  
+          <section id="r2">
+            <h3>No utilizar la palabra reservada "else"</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Remis {
+   ...
+   double calcularCostoDelViaje() {
+    if (esHorarioNocturno())
+     return distanciaRecorrida * COEFICIENTE_VIAJE_NOCTURNO;
+  
+    if (esDomingo())
+     return distanciaRecorrida * COEFICIENTE_VIAJE_DOMINGO;
+  
+    return distanciaRecorrida * COEFICIENTE_VIAJE_DIURNO;
+   }
+  }
+}</code></pre>
+          </section>
+  
+          <section id="r2">
+            <h3>No utilizar la palabra reservada "else"</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">public Result handleInput(String input) {
+ if (input.equals("yes")) {
+  return processYesInput();
+ } else if (input.equals("no")) {
+  return processNoInput();
+ } else if (input.equals("cancel")) {
+  return processCancelInput();
+ } else {
+  return processInvalidInput();
+ }
+}</code></pre>
+          </section>
+  
+          <section id="r2">
+            <h3>No utilizar la palabra reservada "else"</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">public Result handleInput(String input) {
+ if (input.equals("yes")) {
+  return processYesInput();
+ } 
+ if (input.equals("no")) {
+  return processNoInput();
+ }  
+ if (input.equals("cancel")) {
+  return processCancelInput();
+ } 
+ return processInvalidInput();
+}</code></pre>
+          </section>
+
+          <section id="r3">
+            <h3>Regla #3</h3>
+            <h3>Wrapea los primitivos y Strings</h3>
+            a.k.a: <a href="http://wiki.c2.com/?PrimitiveObsession">Primitive Obsession</a>
+          </section>  
+        
+          <section id="r3">
+            <h3>Wrapea los primitivos y Strings</h3>
+            <p class="chico fragment">Crea abstracciones que representen el dominio que estas modelando en lugar de usar ints o Strings: DNI, Dinero, etc</p>
+            <p class="chico fragment">Evitas duplicar código aplicando OOP o evitas usar "helpers", "utils". Por ejemplo, en lugar de usar un String para el email y la validación en StringHelper.validarEmail(), crea la abstracción Email.</p>
+            <p class="chico fragment">También se los conoce como <b>Value Objects</b></p>         
+          </section>  
+          
+          <section id="r3">
+            <h3>Wrapea los primitivos y Strings</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="4-5|8-10|15">class Profesor {
+  private String nombre;
+  private String apellido;
+  private String email;
+  private static String EMAIL_REGEX = "^[\\w-_\\.+]*...$";
+            
+  public Profesor(String nombre, String apellido, String email) {
+   if (!email.matches(EMAIL_REGEX)) {
+    throw new RuntimeException("Must be a valid email address...");
+   }
+   if (!isEmtpyOrNull(nombre, apellido)) {
+    throw new RuntimeException("nombre y apellido no puede ser vacios ni nulos");
+   }             
+
+   this.email = email;
+   this.nombre = nombre;
+   this.apellido = apellido;
+  }
+  
+  @Override
+  public String toString() {
+   return email;
+  }
+}</code></pre>
+          </section>
+
+          <section id="r3">
+            <h3>Wrapea los primitivos y Strings</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="4|11">class Profesor {
+  private String nombre;
+  private String apellido;
+  private Email email;
+            
+  public Profesor(String nombre, String apellido, String email) {
+   if (!isEmtpyOrNull(nombre, apellido)) {
+    throw new RuntimeException("nombre y apellido no puede ser vacios ni nulos");
+   }             
+
+   this.email = new Email(email).toString();
+   this.nombre = nombre;
+   this.apellido = apellido;
+  }
+  
+  @Override
+  public String toString() {
+   return email;
+  }
+}
+  </code></pre>
+          </section>
+
+
+          <section id="r3">
+            <h3>Wrapea los primitivos y Strings</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px">class Email {
+  private String email;
+  private static String EMAIL_REGEX = "^[\\w-_\\.+]*...$";
+            
+  public Email(String email) {
+   if (!email.matches(EMAIL_REGEX)) {
+    throw new RuntimeException("Must be a valid email address...");
+   }
+                
+   this.email = email;
+  }
+  
+  @Override
+  public String toString() {
+   return email;
+  }
+}
+  </code></pre>
+          </section>
+
+          <section id="r4">
+            <h3>Regla #4</h3>
+            <h3>First class collections</h3>
+            <p class="fragment">Cada clase que contiene una colección <u>no puede</u> tener otras variables de instancia.</p>
+            <pre class="fragment"><code class="java" code-trim data-noescape contenteditable style="font-size:18px">//En lugar de...
+class Concurso {
+ private List&lt;Participante> participantes;
+ private LocalDate fechaInicio, fechaFin;
+ ...
+}</code></pre>
+          </section>  
+          <section id="r4">
+            <h3>First class collections</h3>
+            <pre class="fragment"><code class="java" code-trim data-noescape contenteditable style="font-size:18px"><span class="fragment">//Escribamos ...
+class Concurso {
+  private Participantes participantes;
+  private LocalDate fechaInicio, fechaFin;
+  ...
+}
+class Participantes {
+  private List&lt;Participante> participantes;
+  ...
+}</span></code></pre>
+          </section>  
+  
+  
+          <section id="r5">
+            <h3>Regla #5</h3>
+            <h3>Un punto por línea</h3>
+            <p class="fragment">Si tenes más de un punto en alguna línea de código, el trabajo (la lógica) esta siendo implementada en el lugar equivocado.</p>
+            <p class="fragment">Múltiples puntos indincan que estas violando el encapsulamiento.</p>
+            <p class="fragment">Tell don't ask, Demeter Law.</p>
+          </section>  
+  
+          <section id="r5">
+            <h3>Un punto por línea</h3>
+            <pre class="fragment"><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="5-6|10-17">class Board {
+  ...
+  String boardRepresentation() {
+  StringBuffer buf = new StringBuffer();
+  for(Location l : squares())
+    buf.append(l.current.representation.substring(0, 1));
+    return buf.toString();
+  }
+}
+class Piece {
+ ...
+ String representation; 
+}
+class Location {
+ ...
+ Piece current;
+}</code></pre>
+          </section>  
+  
+          <section id="r5">
+            <h3>Un punto por línea</h3>
+            <pre><code class="fragment java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="5-6|22-29|10-20">class Board {
+    ...
+    String boardRepresentation() {
+      StringBuffer buf = new StringBuffer();
+      for(Location l : squares())
+        l.addTo(buf); //collecting parameter
+      return buf.toString();
+    }
+  }  
+  class Piece {
+    ...
+    String representation;
+  
+    String character() {
+      return representation.substring(0, 1);
+    }
+    void addTo(StringBuffer buf) {
+      buf.append(character());
+    }  
+  }
+  
+  class Location {
+    ...
+    Piece current;
+    
+    void addTo(StringBuffer buf) {
+      current.addTo(buf);
+    }
+  }
+  </code></pre>
+          </section>  
+  
+          <section id="r6">
+            <!--data-line-numbers="5-6|22-29|10-20"-->
+            <h3>Regla #6</h3>
+            <h3>No abrevies</h3>
+          </section>  
+
+          <section id="r6">
+            <!--data-line-numbers="5-6|22-29|10-20"-->
+            <h3>No abrevies</h3>
+            <p class="fragment">Muchas veces es tentador abreviar nombres de clases, métodos o variables. No lo hagas. Es confuso para quien lee.</p>
+          </section>  
+
+          <section id="r6">
+            <!--data-line-numbers="5-6|22-29|10-20"-->
+            <h3>No abrevies</h3>
+            <p class="fragment">Si pensas que el nombre que debería ir es muy largo, quizas esa abstracción esta haciendo demasiado, partila.</p>
+            <p class="fragment">Una o dos palabras para los nombres y sin duplicar contexto. Si tu clase se llama <b>OrdenDePago</b>, no llames a un método <span class="tachado">enviarOrdenDePago</span>(), sino mejor <b>enviar()</b>. Asi queda ordenDePago.enviar().</p>         
+          </section>  
+
+          <section id="r7">
+            <h3>Regla #7</h3>
+            <h3>Mantener las entidades chicas</h3>
+            <p class="fragment">Las <b>clases</b> no pueden tener más de 50 líneas.</p>
+            <p class="fragment">Los <b>paquetes</b> no pueden tener más de 10 clases.</p>
+          </section>  
+  
+          <section id="r8">
+            <h3>Regla #8</h3>
+            <h3>Clases con máximo dos variables de instancia</h3>
+            <p class="fragment">Más variables de instancia, menos cohesiva es la clase.</p>
+          </section>  
+
+          <section id="r8" data-auto-animate="fade-out">
+            <h3>Clases con máximo dos variables de instancia</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="1-20|5-7|8-13">//En lugar de...
+class Employee {
+  private int id;
+  private String name;
+  private String address;
+  private String phoneNumber;
+  private String email;
+  private String department;
+  private String jobTitle;
+  private double salary;
+  private double bonus;
+  private boolean isManager;
+  private boolean isFullTime;
+              
+  // Constructor and other methods omitted for brevity
+}
+  </code></pre>
+          </section>  
+  
+          <section id="r8" data-auto-animate="fade-out">
+            <h3>Clases con máximo dos variables de instancia</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="5-6">//En lugar de...
+class Employee {
+  private int id;
+  private String name;
+  private Contact contact;
+  private Job job;
+              
+  // Constructor and other methods omitted for brevity
+}
+  </code></pre>
+  <p class="fragment">Clases con máximo 5 variables de instancia</p>
+          </section>  
+
+          <section id="r8" data-auto-animate="fade-out">
+            <p class="title">¿Qué efecto importante tiene esto sobre nuestro código?</p>
+          </section>  
+
+          <section id="r8" data-auto-animate="fade-out">
+            <h3>Clases con máximo dos variables de instancia</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="2-16">//En lugar de...
+class Employee {
+  ...
+  private String jobTitle;
+  private double salary;
+  private double bonus;
+  private boolean isManager;
+  private boolean isFullTime;
+              
+  public double sueldoCompleto() {
+    double salario = salary;
+    if (isManager) {
+      salario += bonus; 
+    }
+    ....
+  }
+}
+  </code></pre>
+          </section>  
+
+          <section id="r8" data-auto-animate="fade-in">
+            <h3>Clases con máximo dos variables de instancia</h3>
+            <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-8">class Employee {
+  ...
+  private Job job;
+              
+  public double sueldoCompleto() {
+    job.sueldo();
+  }
+}
+  </code></pre>
+  <p><b>Delego</b> en <b>Job</b> el cálculo del salario. Objetos <b>más cohesivos</b>, <b>más simples</b>, <b>más chicos</b>.</p>
+          </section>  
+
+ <!--          <section id="r8">
+            <h3>Clases con máximo dos variables de instancia</h3>
+            <p class="fragment">Básicamente aplicó la R3 (wrapear primitivos).</p>
+            <p class="fragment">Relación con LCOM4 (Lack of Cohesion in Methods)</p>
+            <a class="fragment" href="https://objectscriptquality.com/docs/metrics/lack-cohesion-methods-lcom4">LCOM4</a>
+          </section>  
+ -->  
+          <section id="r9" data-transition="slide">
+            <h3>Regla #9</h3>
+            <p>¿Falta una? ¿Cuál es?</p>
+            <p class="fragment">Si me escucharon &#129300 en clases van a adivinar... </p>
+          </section>
+  
+          <section id="r9">
+            <h3>Regla #9</h3>
+            <h3>No usar getters/setters</h3>
+            <p class="fragment">Apliquen <b>Tell, Don't Ask.</b></p>
+          </section>  
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/simplemenu/simplemenu.js"></script>
+    <script src="plugin/relativenumber/relativenumber.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>
+      window.onload = function () {
+        let today = new Date().toLocaleDateString();
+        let obj = document.getElementById("hoy");
+        document.getElementById("hoy").innerText = today;
+      };
+
+      Reveal.addEventListener("slidechanged", function (event) {
+        if (event.indexh > 0) {
+          document.querySelector(".reveal .footer").style.display = "block";
+        } else {
+          document.querySelector(".reveal .footer").style.display = "none";
+        }
+      });
+
+      Reveal.addEventListener("ready", function (event) {
+        if (event.indexh === 0)
+          document.querySelector(".reveal .footer").style.display = "none";
+      });
+
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RelativeNumber,
+          Simplemenu,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
+</html>
