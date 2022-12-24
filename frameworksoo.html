@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Object Calisthenics</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
+
+    <style>
+    .tachado {
+      text-decoration: line-through;
+    }
+    .simplecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .inlinecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
+
+      .reveal section code.small1 {
+        font-size: 0.8em;
+      }
+
+      div.line {
+        border-bottom: 1px solid;
+        border-color: lightgray;
+      }
+
+      .box3 {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box2 {
+        width: 720px;
+        padding: 15px;
+        margin-left: 100px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
+
+      .box {
+        width: 990px;
+        /*border: 15px solid green;*/
+        padding: 15px;
+        margin: 2px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+        /*font-family: 'Times New Roman', Times, serif;*/
+      }
+
+      .box4 {
+        width: 730px;
+        padding: 15px;
+        margin-left: 2px;
+        margin-top: 10px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 30pt;
+        font-weight: bold;
+      }
+      .titulobox {
+        width: 890px;
+      }
+
+      .portada .subtitulo {
+        color: lightgray;
+      }
+      
+      .column-container{
+			  display: flex;
+			}
+			
+      .col{
+			  flex: 1;
+			}
+
+      .autor {
+        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+        font-size: 15pt;
+      }
+
+      .fechahoy {
+        color: gray;
+      }
+
+      .titulo {
+        font-size: 50pt;
+      }
+
+      .titulomaschico {
+        font-size: 30pt;
+      }
+
+      .resaltar {
+        color: #4a4e69;
+      }
+
+      p.chico {
+        font-size: 24pt;
+      }
+
+      span.itali {
+        font-family: cursive;
+      }
+
+      p.maschico {
+        font-size: 20pt;
+      }
+
+      span.maschico {
+        font-size: 20pt;
+      }
+
+      li.maschico {
+        font-size: 20pt;
+      }
+
+      p.alineadoIzq {
+        text-align: left;
+      }
+
+      p.maschicoYalineadoIzq {
+        font-size: 12pt;
+        text-align: left;
+      }
+
+      p.chicoYalineadoIzq {
+        font-size: 24pt;
+        text-align: left;
+      }
+
+      .reveal .slide-number {
+        background-color: white;
+        color: black;
+      }
+
+      .reveal .footer {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        font-size: 0.5em;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="footer">Object Calisthenics</div>
+      <div class="menubar line">
+        <div class="slide-number"></div>
+        <ul class="menu">
+          <li><a href="#/quees">¿Qué es?</a></li>
+          <li><a href="#/r1">Regla #1</a></li>
+          <li><a href="#/r2">Regla #2</a></li>
+          <li><a href="#/r3">Regla #3</a></li>
+          <li><a href="#/r4">Regla #4</a></li>
+          <li><a href="#/r5">Regla #5</a></li>
+          <li><a href="#/r6">Regla #6</a></li>
+          <li><a href="#/r7">Regla #7</a></li>
+          <li><a href="#/r8">Regla #8</a></li>
+          <li><a href="#/r9">Regla #9</a></li>
+        </ul>
+        <div class="placeholder"></div>
+      </div>
+      <div class="slides">
+        <section id="quees"
+          style="text-align: left"
+          data-transition="fade"
+          data-state="hide-menubar no-title-footer"
+        >
+          <div class="box">
+            <p>Frameworks Orientados a Objetos</p>
+          </div>
+          <p class="autor">Enrique Molinari</p>
+          <p id="hoy" class="autor fechahoy"></p>
+        </section>
+
+        <section>
+					<h2>¿Qué es un Framework?</h2>
+				</section>
+				<section>
+					<h3 class="titulocolor">Un Framework...</h3>
+					<br/>
+					<p class="fragment">Una técnica particular de implementación para construir <strong>familias de aplicaciones</strong></p>
+					<p class="fragment">Familias donde el <strong>dominio del problema</strong> es lo común.</p>
+					<p class="fragment">Familias donde la <strong>infraestructura</strong> es lo común.</p>
+				</section>
+				<section>
+					<h3 class="titulocolor">Dada una familia de aplicaciones, un Framework...</h3>
+					<ul>
+						<li class="fragment">Representa un <strong>Diseño Común</strong> y una <strong>Implementación parcial</strong> de las aplicaciones dentro de dicha familia.</li>
+						<li class="fragment">Es una solución genérica para un conjunto de problemas similares</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class="titulocolor">Dada una familia de aplicaciones, un Framework...</h3>
+					<ul>
+						<li class="fragment"><strong>Incompleto por naturaleza</strong>: funcionalidad específica desarrollada por el <w>usuario</w> del framework</li>
+						<li class="fragment">Las "partes" a completar llevan el nombre de <strong>métodos hook</strong> (puntos de extensión o hot spots)</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class="titulocolor">Y...<span class="fragment"> ¿Qué es un Framework Orientado a Objetos?</span> </h3>
+					<ul>
+						<li class="fragment">Una <strong>jerarquía de clases (mayormente abstractas)</strong>.</li>
+						<li class="fragment">Más los <strong>hooks</strong> o <strong>puntos de extensión</strong>.</li>
+						<li class="fragment">La <strong>interacción definida</strong> entre las clases del framework y las especializaciones.</li>
+						<li class="fragment"><strong>Documentación</strong> de como uso y <u>extiendo</u> el framework.</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class="titulocolor">Además... </h3>
+					<ul>
+						<li class="fragment">La funcionalidad <strong>core</strong> de las aplicaciones es implementada por el framework en ésta jerarquía de clases abstractas.</li>
+						<li class="fragment">La <strong>extensión</strong> (customización) del framework se realiza implementando los puntos de extensión.</li>
+						<li class="fragment">El framework también puede proveer clases concretas como librerías.</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class="titulocolor">Frameworks OO</h3>
+					<p><i><strong>"Programando para customizar"</strong></i></p>
+					<div style="position:relative">
+		        <p class="fragment fade-out" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+		        	<img src="imgs/framework-app.png" style="background:none; border:none; box-shadow:none;">
+		        </p>
+		        <p class="fragment fade-in" style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">
+		          <img src="imgs/framework-customizado.png" style="background:none; border:none; box-shadow:none;">
+		        </p>
+    			</div>
+				</section>
+
+				<section>
+					<h3 class="titulocolor">Frameworks OO</h3>
+					<p><i>Otra vista del código del framwork vs el código de la aplicación</i></p>
+		      	<img src="imgs/framework-app2.png" style="background:none; border:none; box-shadow:none;">
+				</section>
+
+				<section>
+					<h3 class="titulocolor">Framworks OO</h3>
+					<p><i><strong>Si implementamos una aplicación usando un framework tenemos: </strong></i></p>
+					<ul>
+						<li class="fragment">El código del framework, <strong>provisto por el desarrollador del framework</strong>.</li>
+						<li class="fragment">El código de la customización del framework, <strong>provisto por el desarrollador de la aplicación</strong>.</li>
+						<li class="fragment">El resto de la aplicación no relacionada con el framework, provista el desarrollador de la aplicación.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3 class="titulocolor">¿Por qué la existencia de Frameworks?</h3>
+					<blockquote class="fragment"><strong>Reuso de Software</strong></blockquote>
+					<p class="fragment">El mayor esfuerzo que hacemos los programadores cuando desarrollamos una aplicación es pensar en el diseño de alto nivel que ésta tendra. Los frameworks son una forma de reutilizar ese esfuerzo intelectual.</p>
+					<p class="fragment">Los frameworks brindan <strong>reuso de diseño e implementación</strong>.</p>
+				</section>
+
+				<section>
+					<h3 class="titulocolor">¿Qué distingue un Framework de una Librería?</h3>
+					<p class="fragment">En ambos tengo reuso de código...</p>
+					<p class="fragment">Principalmente la <strong>Inversión de control</strong></p>
+		      <img class="fragment" src="imgs/frw-vs-library.png" style="background:none; border:none; box-shadow:none;">
+				</section>
+
+				<section>
+					<h3 class="titulocolor">Puntos de Extensión</h3>
+					<p class="fragment">"Separa el código que cambia de aquel que no cambia"</p>
+					<p class="fragment">Son las partes del framework donde un usuarios/desarrollador del framework puede modificar o agregar comportamiento.</p>
+					<p class="fragment"><strong>Todo aquello cómun a las aplicaciones de una familia lo implementa el framework, las diferencias se implementan a travéz de los puntos de extensión</strong>.</p>
+				</section>
+
+				<section>
+					<h3 class="titulocolor">Dos Tipos de Frameworks</h3>
+					<p class="fragment"><strong>Caja Blanca</strong>: Aquellos donde los puntos de extensión se basan en la <strong>herencia</strong> (Usando Template Method)</p>
+					<p class="fragment"><strong>Caja Negra</strong>: Aquellos donde los puntos de extensión se basan en <strong>composición</strong></p>
+					<p class="fragment"><strong>Caja Gris</strong>: Puntos de extensión de <strong>ambas</strong> formas.</p>
+				</section>
+
+				<section>
+					<h3 class="titulocolor">Framworks OO</h3>
+					<blockquote><strong>Veamos un ejemplo en Eclipse...</strong></blockquote>
+				</section>
+
+				<section>
+					<h3 class="titulocolor">Patrones vs Frameworks</h3>
+					<div class="column-container">
+						<div class="col">
+							<p>Patrones</p>
+							<ul>
+								<li style="font-size:32px" data-fragment-index="1" class="fragment">Reutilización de diseño</li>
+								<li style="font-size:32px" data-fragment-index="3" class="fragment">Indica cómo realizar un buen diseño.</li>
+								<li style="font-size:32px" data-fragment-index="5" class="fragment">Independiente del lenguaje.</li>
+								<li style="font-size:32px" data-fragment-index="7" class="fragment">Usualmente cubre un dominio general de problemas.</li>
+								<li style="font-size:32px" data-fragment-index="9" class="fragment">Usualmente cubre una parte pequeña del diseño de una app.</li>
+							</ul>
+						</div>
+						<div class="col">
+							<p>Frameworks</p>
+							<ul>
+								<li style="font-size:32px" data-fragment-index="2" class="fragment">Reutilización de diseño y código.</li>
+								<li style="font-size:32px" data-fragment-index="4" class="fragment">Es diseño e implementación.</li>
+								<li style="font-size:32px" data-fragment-index="6" class="fragment">Especifico de un lenguaje.</li>
+								<li style="font-size:32px" data-fragment-index="8" class="fragment">Usualmente cubre dominios específicos de problemas.</li>
+								<li style="font-size:32px" data-fragment-index="10" class="fragment">Usualmente cubre todo el diseño general de una app.</li>
+							</ul>
+						</div>
+
+				</section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/simplemenu/simplemenu.js"></script>
+    <script src="plugin/relativenumber/relativenumber.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>
+      window.onload = function () {
+        let today = new Date().toLocaleDateString();
+        let obj = document.getElementById("hoy");
+        document.getElementById("hoy").innerText = today;
+      };
+
+      Reveal.addEventListener("slidechanged", function (event) {
+        if (event.indexh > 0) {
+          document.querySelector(".reveal .footer").style.display = "block";
+        } else {
+          document.querySelector(".reveal .footer").style.display = "none";
+        }
+      });
+
+      Reveal.addEventListener("ready", function (event) {
+        if (event.indexh === 0)
+          document.querySelector(".reveal .footer").style.display = "none";
+      });
+
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RelativeNumber,
+          Simplemenu,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
+</html>
