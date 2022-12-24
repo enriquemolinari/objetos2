@@ -45,8 +45,12 @@
         font-weight: bold;
       }
 
+      div.smallbox {
+        width: 1060px;
+      }
+
       .box {
-        width: 720px;
+        width: 1040px;
         /*border: 15px solid green;*/
         padding: 15px;
         margin: 2px;
@@ -117,15 +121,16 @@
 
   <body>
     <div class="reveal">
-      <div class="footer">Taller de Tecnologías y Producción de Software</div>
+      <div class="footer">Programación Orientada a Objetos 2</div>
       <div class="menubar line">
         <div class="slide-number"></div>
         <ul class="menu">
-          <li><a href="#/obj">Objetivo</a></li>
-          <li><a href="#/cont">Contenidos</a></li>
-          <li><a href="#/met">Metodología</a></li>
-          <li><a href="#/curfin">Cursada y Final</a></li>
-          <li><a href="#/trab">Trabajo Práctico</a></li>
+          <li><a href="#/yavieron">Uds ya vieron...</a></li>
+          <li><a href="#/deqtrata">¿De qué se trata?</a></li>
+          <li><a href="#/trab">Contenidos y TPs</a></li>
+          <li><a href="#/promo">Condiciones para Aprobar</a></li>
+          <li><a href="#/necesitamos">¿Qué necesitamos?</a></li>
+          <li><a href="#/biblio">Bibliografía</a></li>
         </ul>
         <div class="placeholder"></div>
       </div>
@@ -136,122 +141,94 @@
           data-state="hide-menubar no-title-footer"
         >
           <div class="box">
-            <span>Taller de Tecnología y Producción de Software</span>
+            <span>Programación Orientada a Objetos 2</span>
           </div>
-          <div class="smallbox">Buenas Prácticas en Desarrollo de Software</div>
+          <div class="smallbox">
+            El problema no es hacer software que funcione. El problema es hacer
+            software que sea <u>fácil de modificar</u>.
+          </div>
           <p class="autor">Enrique Molinari</p>
           <p id="hoy" class="autor fechahoy"></p>
         </section>
 
-        <section id="obj">
-          <p class="titulo">Objetivo</p>
-          <p class="chico">
-            Introducir a los estudiantes en un esquema de desarrollo de software
-            utilizando las <u>mejores prácticas actuales</u> y tecnologías
-            actuales <b>aceptadas</b>.
-          </p>
-          <p class="chico">
-            Mejores Prácticas Actuales relacionadas con el diseño, la
-            arquitectura y el código que escribimos.
+        <section id="yavieron">
+          <p class="titulo">Uds ya vieron...</p>
+          <p class="maschico">
+            <ul><li class="fragment"><b>Orientación a Objetos 1</b>: Clases, Objetos, Mensajes, Polimorfismo, Herencia.</li> 
+            <li class="fragment"><b>Seminario de Lenguajes</b>: La Plataforma Java, Colecciones, JDBC, Exceptions.</li>
+            <li class="fragment"><b>Ingeniería de Software 1</b>: Adquisición de Requerimientos, Modelos en Cascada y
+            Evolutivos, Calidad, Procesos Ágiles.</li> 
+            <li class="fragment"><b>Bases de Datos</b>:Modelo Relacional, Normalización, SQL.</li>            
           </p>
         </section>
 
-        <section id="cont">
-          <p class="titulo">Contenidos</p>
-          <p class="chicoYalineadoIzq fragment">
-            Conceptos de Arquitectura de Software
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Conceptos de Aplicaciones Web Single-Page
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            El protocolo HTTP y servicios REST
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Conceptos de Bases de Datos NoSQL (relacional ya lo conocen)
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Conceptos de Integración Continua
-          </p>
-          <p class="chicoYalineadoIzq fragment">Análisis Estático de Código</p>
+        <section id="yavieron">
+          <p>Aprendieron a programar. Programaron con el objetivo de que <b><u>funcione</u></b>. Lo cual es 100% razonable, que funcione es siempre el primer objetivo.</p>
         </section>
 
-        <section id="met">
-          <p class="titulo">Metodología</p>
-          <p class="chicoYalineadoIzq fragment">
-            A lo largo del curso vamos a ir construyendo una aplicación en
-            <u>equipo</u>.
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Se irá construyendo en iteraciones de 2 semanas. Aproximadamente
-            tenemos 7 sprints.
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Las iteraciones podrán tener tareas de desarrollo, de investigación
-            y pruebas de concepto (Ej: investigar una tecnología en particular
-            que necesitamos aplicar) y de pago de deuda técnica (Ej: Mejorar la
-            cobertura de test).
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            En ciertas etapas del desarrollo se iran impartiendo los diferentes
-            contenidos para aplicar en el desarrollo.
-          </p>
+        <section id="deqtrata">
+          <h3>¿De qué se trata Objetos 2?</h3>
+          <p class="fragment">Ahora, ademas de que funcione, vamos a enfocarnos en escribir <b><u>código elegante</u></b></p>
+          <p class="fragment">¿Que sería Código Elegante?</p>
         </section>
 
-        <section id="met">
-          <p class="titulo">Metodología (Cont.)</p>
-          <p class="chicoYalineadoIzq fragment">
-            En las clases tendremos: Plannings, Dailies, consultas técnicas o
-            funcionales, clases teóricas.
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            El rol de los docentes (cuando no se imparten clases teóricas) será
-            por momentos de consultor técnico (consejos y propuestas). Y además
-            como product owner.
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Pueden utilizar tiempo de la clase para programar. Pero solo con eso
-            no va a alcanzar.
-          </p>
+        <section id="deqtrata">
+          <h3>¿Código Elegante?</h3>
+          <p><b>Legible</b>: Cualquiera puede escribir código que una computadora pueda entender. Los buenos programadores escriben código que otros programadores pueden entender (Martin Fowler).</p> 
+          <p class="fragment">Testeable, fácil de mantener, fácil de extender, desacoplado, cohesivo, sin código duplicado. Aplicando <u>buenas prácticas</u> de Programación Orientada a Objetos.</p>            
         </section>
 
-        <section id="curfin">
-          <p class="titulo">Cursada y Final</p>
-          <p class="chicoYalineadoIzq fragment">
-            La evaluación de cursada es a travéz de los entregables de cada
-            sprint. Los sprints deben estar al día. Dos atrasasos importantes en
-            los sprints es causa de pérdida de la materia.
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Valoramos más: Diseños limpios, Código limpio, buena arquitectura,
-            alta cobertura de test, métricas de análisis estático altas y buena
-            documentación.
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            Por sobre: Usabilidad (UX), Diseño Web (CSS).
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            El final incluirá una tarea adicional individual sobre la aplicación
-            a construir.
-          </p>
+        <section id="deqtrata" data-auto-animate="fade-in">
+          <h3>Veamos un ejemplo...</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-15">class Concurso {
+  ...	
+  public boolean participanteInscripto(Participante participante) {
+    boolean esta = false;
+    int i = 0;
+    List&#60;Inscripcion&#62; l = this.inscriptos;
+    while (!esta && i &#60; l.size()) {
+      if (l.get(i).equals(participante)) {
+        esta = true;
+      } else {
+        i++;
+      }
+    }
+    return esta;
+  }
+} </code></pre>
+        </section>  
+
+        <section id="deqtrata" data-auto-animate="fade-in">
+          <h3>Un poco más elegante ahora...</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-15">class Concurso {
+  ...	
+  public boolean estaInscripto(Participante participante) {
+    for (Participante p : this.inscriptos) {
+      if (p.equals(participante)) {
+        return true;
+      }
+    }
+    return false;
+  }
+}</code></pre>
+        </section>  
+
+        <section id="deqtrata" data-auto-animate="fade-in">
+          <h3>y un poco más elegante aún...</h3>
+          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-7">class Concurso {
+  ...	
+  public boolean estaInscripto(Participante participante) {
+    boolean estaInscripto = this.inscriptos.stream()
+                                    .anyMatch(p -> participante.equals(p));
+    return estaInscripto;
+  }
+}</code></pre>
+        </section>
+        
+        <section id="deqtrata" data-auto-animate="fade-in">
+          <p>Sin modificar la funcionalidad, re-escribimos el código para que sea mas elegante</p>
         </section>
 
-        <section id="trab">
-          <p class="titulo">Trabajo Práctico</p>
-          <p class="chicoYalineadoIzq fragment">
-            Armar los equipos. Grupos de 2 alumnos o 3. (Máximo 4)
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            ¿Qué lenguaje de programación van a utilizar para el front-end? Será
-            JavaScript. ¿React? ¿Vue? ¿Angular? ¿Otro?
-          </p>
-          <p class="chicoYalineadoIzq fragment">
-            ¿Qué lenguaje de programación van a utilizar para el back-end? El
-            que quieran. Pero, debe tener disponibles herramientas de linting
-            (análisis estático), herramientas de testing automatizado. Y debe
-            permitir conectarse a una base de datos relacional y NoSQL.
-          </p>
-        </section>
       </div>
     </div>
 
