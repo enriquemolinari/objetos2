@@ -1,186 +1,190 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
 
-    <title>Introducción a la materia</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/white.css" />
-    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
-    <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
+  <title>Introducción a la materia</title>
 
-    <style>
-      div.line {
-        border-bottom: 1px solid;
-        border-color: lightgray;
-      }
+  <link rel="stylesheet" href="dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal.css" />
+  <link rel="stylesheet" href="dist/theme/white.css" />
+  <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
 
-      .box3 {
-        /*width: 720px;
+  <style>
+    div.line {
+      border-bottom: 1px solid;
+      border-color: lightgray;
+    }
+
+    .box3 {
+      /*width: 720px;
         padding: 15px;
         margin-left: 100px;*/
-        padding-left: 5px;
-        padding-right: 5px;
-        background-color: #4a4e69;
-        color: white;
-        font-size: 50pt;
-        font-weight: bold;
-      }
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color: #4a4e69;
+      color: white;
+      font-size: 50pt;
+      font-weight: bold;
+    }
 
-      .box2 {
-        width: 720px;
-        padding: 15px;
-        margin-left: 100px;
-        background-color: #4a4e69;
-        color: white;
-        font-size: 50pt;
-        font-weight: bold;
-      }
+    .box2 {
+      width: 720px;
+      padding: 15px;
+      margin-left: 100px;
+      background-color: #4a4e69;
+      color: white;
+      font-size: 50pt;
+      font-weight: bold;
+    }
 
-      div.smallbox {
-        width: 1060px;
-      }
+    div.smallbox {
+      width: 1060px;
+    }
 
-      .box {
-        width: 1040px;
-        /*border: 15px solid green;*/
-        padding: 15px;
-        margin: 2px;
-        background-color: #4a4e69;
-        color: white;
-        font-size: 50pt;
-        font-weight: bold;
-        /*font-family: 'Times New Roman', Times, serif;*/
-      }
+    .box {
+      width: 1040px;
+      /*border: 15px solid green;*/
+      padding: 15px;
+      margin: 2px;
+      background-color: #4a4e69;
+      color: white;
+      font-size: 50pt;
+      font-weight: bold;
+      /*font-family: 'Times New Roman', Times, serif;*/
+    }
 
-      .portada .subtitulo {
-        color: lightgray;
-      }
+    .portada .subtitulo {
+      color: lightgray;
+    }
 
-      .autor {
-        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
-        font-size: 15pt;
-      }
+    .autor {
+      /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+      font-size: 15pt;
+    }
 
-      .fechahoy {
-        color: gray;
-      }
+    .fechahoy {
+      color: gray;
+    }
 
-      .titulo {
-        font-size: 50pt;
-      }
+    .titulo {
+      font-size: 50pt;
+    }
 
-      .resaltar {
-        color: #4a4e69;
-      }
+    .resaltar {
+      color: #4a4e69;
+    }
 
-      p.chico {
-        font-size: 24pt;
-      }
+    p.chico {
+      font-size: 24pt;
+    }
 
-      span.itali {
-        font-family: cursive;
-      }
+    span.itali {
+      font-family: cursive;
+    }
 
-      p.maschico {
-        font-size: 20pt;
-      }
+    p.maschico {
+      font-size: 20pt;
+    }
 
-      p.maschicoYalineadoIzq {
-        font-size: 12pt;
-        text-align: left;
-      }
+    p.maschicoYalineadoIzq {
+      font-size: 12pt;
+      text-align: left;
+    }
 
-      p.chicoYalineadoIzq {
-        font-size: 24pt;
-        text-align: left;
-      }
+    p.algomaschicoYalineadoIzq {
+      font-size: 18pt;
+      text-align: left;
+    }
 
-      .reveal .slide-number {
-        background-color: white;
-        color: black;
-      }
+    p.chicoYalineadoIzq {
+      font-size: 24pt;
+      text-align: left;
+    }
 
-      .reveal .footer {
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-        font-size: 0.5em;
-        color: gray;
-      }
-    </style>
-  </head>
+    .reveal .slide-number {
+      background-color: white;
+      color: black;
+    }
 
-  <body>
-    <div class="reveal">
-      <div class="footer">Programación Orientada a Objetos 2</div>
-      <div class="menubar line">
-        <div class="slide-number"></div>
-        <ul class="menu">
-          <li><a href="#/yavieron">Uds ya vieron...</a></li>
-          <li><a href="#/deqtrata">¿De qué se trata?</a></li>
-          <li><a href="#/trab">Contenidos y TPs</a></li>
-          <li><a href="#/promo">Condiciones para Aprobar</a></li>
-          <li><a href="#/necesitamos">¿Qué necesitamos?</a></li>
-          <li><a href="#/biblio">Bibliografía</a></li>
-        </ul>
-        <div class="placeholder"></div>
-      </div>
-      <div class="slides">
-        <section
-          style="text-align: left"
-          data-transition="fade"
-          data-state="hide-menubar no-title-footer"
-        >
-          <div class="box">
-            <span>Programación Orientada a Objetos 2</span>
-          </div>
-          <div class="smallbox">
-            El problema no es hacer software que funcione. El problema es hacer
-            software que sea <u>fácil de modificar</u>.
-          </div>
-          <p class="autor">Enrique Molinari</p>
-          <p id="hoy" class="autor fechahoy"></p>
-        </section>
+    .reveal .footer {
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+      font-size: 0.5em;
+      color: gray;
+    }
+  </style>
+</head>
 
-        <section id="yavieron">
-          <p class="titulo">Uds ya vieron...</p>
-          <p class="maschico">
-            <ul><li class="fragment"><b>Orientación a Objetos 1</b>: Clases, Objetos, Mensajes, Polimorfismo, Herencia.</li> 
-            <li class="fragment"><b>Seminario de Lenguajes</b>: La Plataforma Java, Colecciones, JDBC, Exceptions.</li>
-            <li class="fragment"><b>Ingeniería de Software 1</b>: Adquisición de Requerimientos, Modelos en Cascada y
-            Evolutivos, Calidad, Procesos Ágiles.</li> 
-            <li class="fragment"><b>Bases de Datos</b>:Modelo Relacional, Normalización, SQL.</li>            
+<body>
+  <div class="reveal">
+    <div class="footer">Programación Orientada a Objetos 2</div>
+    <div class="menubar line">
+      <div class="slide-number"></div>
+      <ul class="menu">
+        <li><a href="#/yavieron">Uds ya vieron...</a></li>
+        <li><a href="#/deqtrata">¿De qué se trata?</a></li>
+        <li><a href="#/trab">Contenidos y TPs</a></li>
+        <li><a href="#/promo">Condiciones para Aprobar</a></li>
+        <li><a href="#/necesitamos">¿Qué necesitamos?</a></li>
+        <li><a href="#/biblio">Bibliografía</a></li>
+      </ul>
+      <div class="placeholder"></div>
+    </div>
+    <div class="slides">
+      <section style="text-align: left" data-transition="fade" data-state="hide-menubar no-title-footer">
+        <div class="box">
+          <span>Programación Orientada a Objetos 2</span>
+        </div>
+        <div class="smallbox">
+          El problema no es hacer software que funcione. El problema es hacer
+          software que sea <u>fácil de modificar</u>.
+        </div>
+        <p class="autor">Enrique Molinari</p>
+        <p id="hoy" class="autor fechahoy"></p>
+      </section>
+
+      <section id="yavieron">
+        <p class="titulo">Uds ya vieron...</p>
+        <p class="maschico">
+        <ul>
+          <li class="fragment"><b>Orientación a Objetos 1</b>: Clases, Objetos, Mensajes, Polimorfismo, Herencia.</li>
+          <li class="fragment"><b>Seminario de Lenguajes</b>: La Plataforma Java, Colecciones, JDBC, Exceptions.</li>
+          <li class="fragment"><b>Ingeniería de Software 1</b>: Adquisición de Requerimientos, Modelos en Cascada y
+            Evolutivos, Calidad, Procesos Ágiles.</li>
+          <li class="fragment"><b>Bases de Datos</b>:Modelo Relacional, Normalización, SQL.</li>
           </p>
-        </section>
+      </section>
 
-        <section id="yavieron">
-          <p>Aprendieron a programar. Programaron con el objetivo de que <b><u>funcione</u></b>. Lo cual es 100% razonable, que funcione es siempre el primer objetivo.</p>
-        </section>
+      <section id="yavieron">
+        <p>Aprendieron a programar. Programaron con el objetivo de que <b><u>funcione</u></b>. Lo cual es 100%
+          razonable, que funcione es siempre el primer objetivo.</p>
+      </section>
 
-        <section id="deqtrata">
-          <h3>¿De qué se trata Objetos 2?</h3>
-          <p class="fragment">Ahora, ademas de que funcione, vamos a enfocarnos en escribir <b><u>código elegante</u></b></p>
-          <p class="fragment">¿Que sería Código Elegante?</p>
-        </section>
+      <section id="deqtrata">
+        <h3>¿De qué se trata Objetos 2?</h3>
+        <p class="fragment">Ahora, ademas de que funcione, vamos a enfocarnos en escribir <b><u>código elegante</u></b>
+        </p>
+        <p class="fragment">¿Que sería Código Elegante?</p>
+      </section>
 
-        <section id="deqtrata">
-          <h3>¿Código Elegante?</h3>
-          <p><b>Legible</b>: Cualquiera puede escribir código que una computadora pueda entender. Los buenos programadores escriben código que otros programadores pueden entender (Martin Fowler).</p> 
-          <p class="fragment">Testeable, fácil de mantener, fácil de extender, desacoplado, cohesivo, sin código duplicado. Aplicando <u>buenas prácticas</u> de Programación Orientada a Objetos.</p>            
-        </section>
+      <section id="deqtrata">
+        <h3>¿Código Elegante?</h3>
+        <p><b>Legible</b>: Cualquiera puede escribir código que una computadora pueda entender. Los buenos programadores
+          escriben código que otros programadores pueden entender (Martin Fowler).</p>
+        <p class="fragment">Testeable, fácil de mantener, fácil de extender, desacoplado, cohesivo, sin código
+          duplicado. Aplicando <u>buenas prácticas</u> de Programación Orientada a Objetos.</p>
+      </section>
 
-        <section id="deqtrata" data-auto-animate="fade-out">
-          <h3>Veamos un ejemplo...</h3>
-          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-15">class Concurso {
+      <section id="deqtrata" data-auto-animate="fade-out">
+        <h3>Veamos un ejemplo...</h3>
+        <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-15">class Concurso {
   ...	
   public boolean participanteInscripto(Participante participante) {
     boolean esta = false;
@@ -196,11 +200,11 @@
     return esta;
   }
 } </code></pre>
-        </section>  
+      </section>
 
-        <section id="deqtrata" data-auto-animate="fade-in">
-          <h3>Un poco más elegante ahora...</h3>
-          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-15">class Concurso {
+      <section id="deqtrata" data-auto-animate="fade-in">
+        <h3>Un poco más elegante ahora...</h3>
+        <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-15">class Concurso {
   ...	
   public boolean estaInscripto(Participante participante) {
     for (Participante p : this.inscriptos) {
@@ -211,11 +215,11 @@
     return false;
   }
 }</code></pre>
-        </section>  
+      </section>
 
-        <section id="deqtrata" data-auto-animate="fade-in">
-          <h3>y un poco más elegante aún...</h3>
-          <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-7">class Concurso {
+      <section id="deqtrata" data-auto-animate="fade-in">
+        <h3>y un poco más elegante aún...</h3>
+        <pre><code class="java" code-trim data-noescape contenteditable style="font-size:18px" data-line-numbers="3-7">class Concurso {
   ...	
   public boolean estaInscripto(Participante participante) {
     boolean estaInscripto = this.inscriptos.stream()
@@ -223,55 +227,118 @@
     return estaInscripto;
   }
 }</code></pre>
-        </section>
-        
-        <section id="deqtrata" data-auto-animate="fade-in">
-          <p class="fragment">Sin modificar la funcionalidad, re-escribimos el código para que sea mas elegante.</p>
-          <p class="fragment">En este caso, solo aplicando construcciones sintácticas modernas incorporadas en nuevas versiones de Java.</p>
-        </section>
+      </section>
 
-      </div>
+      <section id="deqtrata" data-auto-animate="fade-in">
+        <p class="fragment">Sin modificar la funcionalidad, re-escribimos el código para que sea mas elegante.</p>
+        <p class="fragment">En este caso, solo aplicando construcciones sintácticas modernas incorporadas en nuevas
+          versiones de Java.</p>
+      </section>
+
+      <section id="trab" data-auto-animate="fade-in">
+        <p class="titulo">Contenidos</p>
+        <p class="algomaschicoYalineadoIzq fragment">Objetos anémicos, encapsulamiento y Testing Unitario.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Conceptos sobre Código Limpio.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Técnicas de Diseño I - Asignación de Responsablidades.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Técnicas de Diseño II - Desacoplamiento.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Buenas prácticas sobre parámetros.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Refactoring.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Calistenia de Objetos.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Layering: Estableciendo límites a nivel Capa.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Patrones de Diseño.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Programación Orientada a Aspectos.</p>
+        <p class="algomaschicoYalineadoIzq fragment">Frameworks.</p>
+      </section>
+
+      <section id="trab" data-auto-animate="fade-in">
+        <p class="titulo">Trabajos Prácticos</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 0 - Objetos Anémicos y herramientas.</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 1 Iteración 1 - Objetos y Testing Unitario.</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 1 Iteración 2 - Técnicas de Diseño</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 2 Refactoring - Aplicando Técnicas y buenas prácticas.</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 3 Layering.</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 4, 5, 6, 7 y 8 Patrones de Diseño.</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 9 AOP.</p>
+        <p class="algomaschicoYalineadoIzq fragment">TP 10 Frameworks.</p>
+      </section>
+
+      <section id="promo" data-auto-animate="fade-in">
+        <p class="titulo">Condiciones para Promocionar</p>
+        <p class="chicoYalineadoIzq fragment">80% de asistencia a clases (30 clases en total, 24 de asistencia mínima).
+        </p>
+        <p class="chicoYalineadoIzq fragment">8 o más puntos en los exámenes parciales.</p>
+        <p class="chicoYalineadoIzq fragment">Aprobar todos los TPs <u>en Fecha</u>. Los TPs <u>son individuales</u>. Se
+          muestran al docente en clases</p>
+        <p class="chicoYalineadoIzq fragment">Tener aprobada las materias correlativas.</p>
+      </section>
+
+      <section id="promo" data-auto-animate="fade-in">
+        <p class="titulo">Condiciones para Cursar</p>
+        <p class="chicoYalineadoIzq fragment">75% de asistencia a clases (30 clases en total, 24 de asistencia mínima).
+        </p>
+        <p class="chicoYalineadoIzq fragment">4 o más puntos en los exámenes parciales.</p>
+        <p class="chicoYalineadoIzq fragment">Aprobar todos los TPs <u>en Fecha</u>. Los TPs <u>son individuales</u>. Se
+          muestran al docente en clases.</p>
+      </section>
+
+      <section id="necesitamos" data-auto-animate="fade-in">
+        <p class="titulo">¿Qué Necesitamos para arrancar?</p>
+        <p class="chicoYalineadoIzq fragment">Un IDE: Eclipse, IntelliJ, etc.</p>
+        <p class="chicoYalineadoIzq fragment">Acceso a Github y minimo manejo de Git.</p>
+        <p class="chicoYalineadoIzq fragment">Una Base de datos (MySQL, PostgreSQL, etc). Y un cliente.</p>
+      </section>
+
+      <section id="biblio" data-auto-animate="fade-in">
+        <p class="titulo">Bibliografía</p>
+        <p class="chicoYalineadoIzq fragment"><b>Design Patterns. Elements of Reusable Objects Oriented Software</b>.
+          Garnma, Helm, Johnson, Vlissides, Addison-Wesley, Professional Computing Series, 2003.</p>
+        <p class="chicoYalineadoIzq fragment"><b>Desarrollo de Frameworks Orientados a Objetos</b>. Marcelo Campo y
+          Roberto Tom Price.</p>
+      </section>
+
     </div>
+  </div>
 
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script src="plugin/simplemenu/simplemenu.js"></script>
-    <script src="plugin/relativenumber/relativenumber.js"></script>
-    <script src="plugin/math/math.js"></script>
-    <script>
-      window.onload = function () {
-        let today = new Date().toLocaleDateString();
-        let obj = document.getElementById("hoy");
-        document.getElementById("hoy").innerText = today;
-      };
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/simplemenu/simplemenu.js"></script>
+  <script src="plugin/relativenumber/relativenumber.js"></script>
+  <script src="plugin/math/math.js"></script>
+  <script>
+    window.onload = function () {
+      let today = new Date().toLocaleDateString();
+      let obj = document.getElementById("hoy");
+      document.getElementById("hoy").innerText = today;
+    };
 
-      Reveal.addEventListener("slidechanged", function (event) {
-        if (event.indexh > 0) {
-          document.querySelector(".reveal .footer").style.display = "block";
-        } else {
-          document.querySelector(".reveal .footer").style.display = "none";
-        }
-      });
+    Reveal.addEventListener("slidechanged", function (event) {
+      if (event.indexh > 0) {
+        document.querySelector(".reveal .footer").style.display = "block";
+      } else {
+        document.querySelector(".reveal .footer").style.display = "none";
+      }
+    });
 
-      Reveal.addEventListener("ready", function (event) {
-        if (event.indexh === 0)
-          document.querySelector(".reveal .footer").style.display = "none";
-      });
+    Reveal.addEventListener("ready", function (event) {
+      if (event.indexh === 0)
+        document.querySelector(".reveal .footer").style.display = "none";
+    });
 
-      Reveal.initialize({
-        hash: true,
-        slideNumber: "c/t",
-        plugins: [
-          RevealMarkdown,
-          RevealHighlight,
-          RevealNotes,
-          RelativeNumber,
-          Simplemenu,
-          RevealMath.KaTeX,
-        ],
-      });
-    </script>
-  </body>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RelativeNumber,
+        Simplemenu,
+        RevealMath.KaTeX,
+      ],
+    });
+  </script>
+</body>
+
 </html>
