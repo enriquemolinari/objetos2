@@ -176,7 +176,7 @@
         <li><a href="#/packages">Layers y Hexagonal</a></li>
         <!-- aca hablo de controllers livianos y objetos anemicos -->
         <!--mostrar link de fowler-->
-        <li><a href="#/code">Código</a></li>
+        <li><a href="#/reglas">Reglas de Diseño</a></li>
       </ul>
       <div class="placeholder"></div>
     </div>
@@ -261,22 +261,41 @@
           <span class="fragment maschico"><b>"generic"</b> ¿es de alguna capa? ¿o de todo el sistema?</span>
         </p>
       </section>
+      
 -->
+
       <section id="packages">
-        <p class="titulomaschico">Package by Layers Clásica</p>
+        <p class="titulomaschico">Arquitectura en Capas / Layers</p>
+        <img src="imgs/layered-system.png" />
+        <p class="fragment">
+          ¿Cómo creo esta estructura con paquetes en Java?
+        </p>
+      </section>
+
+      <section id="packages">
+        <p class="titulomaschico">Package by Layers</p>
         <img src="imgs/package-layers.png" />
       </section>
 
-<!--       <section id="packages">
+      <!--       <section id="packages">
         <p class="titulochico">Package by Layers (con modelo compartido)</p>
         <img src="imgs/package-layer-shared-model.png" />
       </section>
  -->
+
+
+      <section id="packages">
+        <p class="titulochico">Arquitectura Hexagonal (o ports and adapters)</p>
+        <img width="759" height="525" src="imgs/hexagonal-garrido.png" />
+      </section>
+
+
       <section id="packages">
         <p class="titulochico">Arquitectura Hexagonal (o ports and adapters)</p>
         <img src="imgs/package-hexagonal.png" />
       </section>
 
+      <!--
       <section id="code">
         <p class="titulomaschico">Exceptions pertenecen a una capa</p>
         <img src="imgs/layers-exceptions.png"></img>
@@ -286,10 +305,32 @@
         <p class="titulomaschico">Exceptions pertenecen a una capa</p>
         <img src="imgs/layers-exceptions-2.png"></img>
       </section>
-
-      <section id="code">
+-->
+      <section id="packages">
         <p class="titulomasmaschico">Exceptions en Hexagonal</p>
-        <img src="imgs/hexagonal-exceptions.png"></img>
+        <img width="320" height="530" src="imgs/hexagonal-exceptions.png"></img>
+      </section>
+
+      <section id="reglas">
+        <p class="titulomasmaschico">Reglas de Diseño</p>
+        <ul>
+          <li class="maschico fragment">Desde la UI, solo estoy acomplado al paquete <em>domain.portsin</em>.
+            <b><u>Nunca</u></b>
+            a clases dentro de <em>domain</em> ni <em>domain.portsout</em>.</li>
+          <li class="maschico fragment"><em>domain.portsin</em> y <em>domain.portsout</em> expone interfaces, con
+            parámetros con
+            datos primitivos (nunca objetos del modelo de dominio). Si requiriera de muchos parámetros puedo utilizar
+            Records para agruparlos.</li>
+          <li class="maschico fragment">En la UI, no realizo ningun tipo de lógica de negocios. Por cada acción (boton
+            en la UI o
+            similar), llamo a un solo método de un interfaz de <em>domain.portsin</em>.</li>
+          <li class="maschico fragment">Los sub-paquetes de infrastructure deben estar acoplados a las interfaces en
+            <em>domain.portsin</em> o <em>domain.portsout</em>, nunca a algun clase de domain.
+          </li>
+          <li class="maschico fragment">Declaren todas las classes del modelo de dominio como <em>package-private</em>
+            (privadas
+            a la capa de negocio/modelo de dominio).</li>
+        </ul>
       </section>
 
       <!--<section id="code">
