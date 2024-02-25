@@ -324,6 +324,7 @@
           <li class="maschico fragment">En la UI, no realizo ningun tipo de lógica de negocios. Por cada acción (boton
             en la UI o
             similar), llamo a un solo método de un interfaz de <em>domain.portsin</em>.</li>
+            <li class="maschico fragment">Las validaciones son parte de la lógica de negocios, siempre va en la capa de dominio/negocio.</li>
           <li class="maschico fragment">Los sub-paquetes de infrastructure deben estar acoplados a las interfaces en
             <em>domain.portsin</em> o <em>domain.portsout</em>, nunca a algun clase de domain.
           </li>
@@ -332,6 +333,21 @@
             a la capa de negocio/modelo de dominio).</li>
         </ul>
       </section>
+
+
+        <section id="reglas">
+          <p class="titulomasmaschico">Reglas de Diseño</p>
+          <ul>
+            <li>La tecnología de front-end <u>cambia</u> muy seguido. Lo mismo para tecnología de persistencia u otros servicios externos.</li>
+            <li>Éstas reglas faciltan los cambios.</li>
+          </ul>
+      </section>
+
+      <section id="reglas">
+        <p class="titulomasmaschico">Fuentes de ejemplo</p>
+          <a href="https://github.com/enriquemolinari/oop2-layering">https://github.com/enriquemolinari/oop2-layering</a>
+    </section>
+    
 
       <!--<section id="code">
         <p class="titulomaschico">Exceptions, ¿Cómo manejarlas?</p>
