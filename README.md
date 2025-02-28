@@ -8,11 +8,10 @@
 6. Clean Code.
 7. Calitenia de Objetos.
 8. Separación en Capas: layering clásico, Hexagonal.
-9. Principios SOLID.
-10. Refactoring.
-11. Patrones de Diseño.
-12. Programación Orientada a Aspectos.
-13. Frameworks Orientados a Objetos.
+9. Refactoring.
+10. Patrones de Diseño.
+11. Programación Orientada a Aspectos.
+12. Frameworks Orientados a Objetos.
 
 ## ¿Queres correr este proyecto?
 

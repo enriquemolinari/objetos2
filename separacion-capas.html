@@ -1,196 +1,256 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Layering</title>
 
-  <title>Layering</title>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+    <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
 
-  <link rel="stylesheet" href="dist/reset.css" />
-  <link rel="stylesheet" href="dist/reveal.css" />
-  <link rel="stylesheet" href="dist/theme/white.css" />
-  <link rel="stylesheet" href="plugin/simplemenu/simplemenu.css" />
-  <!-- Theme used for syntax highlighted code -->
-  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-  <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
+    <style>
+      .simplecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
 
-  <style>
-    .simplecode {
-      background-color: #edecec;
-      color: #272822;
-      border-radius: 0.3em;
-      padding: 4px 5px 6px;
-      white-space: nowrap;
-    }
+      .inlinecode {
+        background-color: #edecec;
+        color: #272822;
+        border-radius: 0.3em;
+        padding: 4px 5px 6px;
+        white-space: nowrap;
+      }
 
-    .inlinecode {
-      background-color: #edecec;
-      color: #272822;
-      border-radius: 0.3em;
-      padding: 4px 5px 6px;
-      white-space: nowrap;
-    }
+      .reveal section code.small1 {
+        font-size: 0.8em;
+      }
 
-    .reveal section code.small1 {
-      font-size: 0.8em;
-    }
+      div.line {
+        border-bottom: 1px solid;
+        border-color: lightgray;
+      }
 
-    div.line {
-      border-bottom: 1px solid;
-      border-color: lightgray;
-    }
+      .box3 {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
 
-    .box3 {
-      padding-left: 5px;
-      padding-right: 5px;
-      background-color: #4a4e69;
-      color: white;
-      font-size: 50pt;
-      font-weight: bold;
-    }
+      .box2 {
+        width: 720px;
+        padding: 15px;
+        margin-left: 100px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+      }
 
-    .box2 {
-      width: 720px;
-      padding: 15px;
-      margin-left: 100px;
-      background-color: #4a4e69;
-      color: white;
-      font-size: 50pt;
-      font-weight: bold;
-    }
+      .box {
+        width: 600px;
+        /*border: 15px solid green;*/
+        padding: 15px;
+        margin: 2px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 50pt;
+        font-weight: bold;
+        /*font-family: 'Times New Roman', Times, serif;*/
+      }
 
-    .box {
-      width: 600px;
-      /*border: 15px solid green;*/
-      padding: 15px;
-      margin: 2px;
-      background-color: #4a4e69;
-      color: white;
-      font-size: 50pt;
-      font-weight: bold;
-      /*font-family: 'Times New Roman', Times, serif;*/
-    }
+      .box4 {
+        width: 730px;
+        padding: 15px;
+        margin-left: 2px;
+        margin-top: 10px;
+        background-color: #4a4e69;
+        color: white;
+        font-size: 30pt;
+        font-weight: bold;
+      }
 
-    .box4 {
-      width: 730px;
-      padding: 15px;
-      margin-left: 2px;
-      margin-top: 10px;
-      background-color: #4a4e69;
-      color: white;
-      font-size: 30pt;
-      font-weight: bold;
-    }
+      .titulobox {
+        width: 890px;
+      }
 
-    .titulobox {
-      width: 890px;
-    }
+      .portada .subtitulo {
+        color: lightgray;
+      }
 
-    .portada .subtitulo {
-      color: lightgray;
-    }
+      .autor {
+        /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
+        font-size: 15pt;
+      }
 
-    .autor {
-      /*font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;*/
-      font-size: 15pt;
-    }
+      .fechahoy {
+        color: gray;
+      }
 
-    .fechahoy {
-      color: gray;
-    }
+      .titulo {
+        font-size: 50pt;
+      }
 
-    .titulo {
-      font-size: 50pt;
-    }
+      .titulomaschico {
+        font-size: 30pt;
+      }
 
-    .titulomaschico {
-      font-size: 30pt;
-    }
+      .resaltar {
+        color: #4a4e69;
+      }
 
-    .resaltar {
-      color: #4a4e69;
-    }
+      p.chico {
+        font-size: 24pt;
+      }
 
-    p.chico {
-      font-size: 24pt;
-    }
+      span.itali {
+        font-family: cursive;
+      }
 
-    span.itali {
-      font-family: cursive;
-    }
+      p.maschico {
+        font-size: 20pt;
+      }
 
-    p.maschico {
-      font-size: 20pt;
-    }
+      span.maschico {
+        font-size: 20pt;
+      }
 
-    span.maschico {
-      font-size: 20pt;
-    }
+      li.maschico {
+        font-size: 20pt;
+      }
 
-    li.maschico {
-      font-size: 20pt;
-    }
+      p.alineadoIzq {
+        text-align: left;
+      }
 
-    p.alineadoIzq {
-      text-align: left;
-    }
+      p.maschicoYalineadoIzq {
+        font-size: 12pt;
+        text-align: left;
+      }
 
-    p.maschicoYalineadoIzq {
-      font-size: 12pt;
-      text-align: left;
-    }
+      p.chicoYalineadoIzq {
+        font-size: 24pt;
+        text-align: left;
+      }
 
-    p.chicoYalineadoIzq {
-      font-size: 24pt;
-      text-align: left;
-    }
+      .reveal .slide-number {
+        background-color: white;
+        color: black;
+      }
 
-    .reveal .slide-number {
-      background-color: white;
-      color: black;
-    }
+      .reveal .footer {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        font-size: 0.5em;
+        color: gray;
+      }
+    </style>
+  </head>
 
-    .reveal .footer {
-      position: absolute;
-      bottom: 1em;
-      left: 1em;
-      font-size: 0.5em;
-      color: gray;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="reveal">
-    <div class="footer">Layering</div>
-    <div class="menubar line">
-      <div class="slide-number"></div>
-      <!--         - estructuras de paquetes
+  <body>
+    <div class="reveal">
+      <div class="footer">Layering</div>
+      <div class="menubar line">
+        <div class="slide-number"></div>
+        <!--         - estructuras de paquetes
         - de objetos anemicos
         - de depender de abstraciones (entre capas y con servicios o librerias externos)
         --- para poder hacer test unitarios, y para poder cambiar implementaciones FACIL!
  -->
-      <ul class="menu">
-        <li><a href="#/porque">¿Por qué partir en Capas?</a></li>
-        <li><a href="#/packages">Layers y Hexagonal</a></li>
-        <!-- aca hablo de controllers livianos y objetos anemicos -->
-        <!--mostrar link de fowler-->
-        <li><a href="#/reglas">Reglas de Diseño</a></li>
-      </ul>
-      <div class="placeholder"></div>
-    </div>
-    <div class="slides">
-      <section style="text-align: left" data-transition="fade" data-state="hide-menubar no-title-footer">
-        <div class="box">
-          <p>Separación en Capas</p>
-        </div>
-        <div class="titulobox">Estructura clara y bien definida</div>
-        <p class="autor">Enrique Molinari</p>
-        <p id="hoy" class="autor fechahoy"></p>
-      </section>
+        <ul class="menu">
+          <li><a href="#/que">¿Capa (Layer)?¿Qué es?</a></li>
+          <li><a href="#/porque">¿Por qué partir en Capas?</a></li>
+          <li>
+            <a href="#/invertido">Todo depende de Model / Model de nada</a>
+          </li>
+          <!-- aca hablo de controllers livianos y objetos anemicos -->
+          <!--mostrar link de fowler-->
+          <li><a href="#/reglas">Reglas de Diseño</a></li>
+        </ul>
+        <div class="placeholder"></div>
+      </div>
+      <div class="slides">
+        <section
+          style="text-align: left"
+          data-transition="fade"
+          data-state="hide-menubar no-title-footer"
+        >
+          <div class="box">
+            <p>Separación en Capas</p>
+          </div>
+          <div class="titulobox">Estructura clara y bien definida</div>
+          <p class="autor">Enrique Molinari</p>
+          <p id="hoy" class="autor fechahoy"></p>
+        </section>
 
-      <section id="porque">
+        <section id="que">
+          <p class="titulochico">¿Qué es una Capa o Layer?</p>
+          <p class="chico fragment">
+            Es un conjunto de clases que responde a un propósito común.
+          </p>
+          <p class="chicoYalineadoIzq fragment">
+            En general vamos a identificar 3 capas: UI (o front-end), Modelo
+            (lógica de negocios) y Persistencia (o clases que acceden a la Base
+            de Datos).
+          </p>
+        </section>
+
+        <section id="que">
+          <p class="titulochico">¿Cómo representamos una Capa/Layer en Java?</p>
+          <p class="fragment chico">¿Existe en Java la keyword Layer?</p>
+          <p class="fragment">
+            Desde Java v1, los <u>paquetes</u>. Java v9 incorporó la
+            construcción sintáctica <u>module</u>.
+          </p>
+        </section>
+
+        <section id="que">
+          <p class="titulomaschico">3 Capas</p>
+          <img src="imgs/3capas.png" />
+          <p class="fragment">
+            Observen las dependencias entre capas.¿Qué significan las fechas?
+          </p>
+        </section>
+
+        <section id="porque">
+          <p class="titulochico">Estructura de Layers (Capas)</p>
+          <img src="imgs/3capas.png" />
+          <p class="chico">
+            ¿Por qué debemos partir una aplicacion en capas? y ¿Por qué definir
+            sus relaciones y respetarlas?
+          </p>
+          <p class="chicoYalineadoIzq fragment">
+            Porque cuando hagamos un cambio tendremos
+            <u>noción de donde éste repercute</u>.
+          </p>
+        </section>
+
+        <section id="invertido">
+          <p class="titulochico">Estructura de Layers (Capas)</p>
+          <img src="imgs/3capasinvertida.png" />
+          <p class="fragment">
+            Todos dependen de model, y model de nadie. Le damos más importancia
+            al modelo. Lo podemos compilar y testear aislado de las otras capas.
+          </p>
+        </section>
+
+        <!--       <section id="porque">
         <p class="titulochico">Estructura de Layers (Capas)</p>
         <p class="chico">
           ¿Por qué debemos partir una aplicacion en capas? y ¿Por qué
@@ -206,9 +266,9 @@
         <p class="titulochico">Layered Architecture</p>
         <img src="imgs/layer-bigball0.png" />
         <p class="fragment">¿Acá tenemos noción donde repercute un cambio?</p>
-      </section>
+      </section> -->
 
-      <section id="porque" data-transition="fade-out fade-in">
+        <!--       <section id="porque" data-transition="fade-out fade-in">
         <p class="titulochico">Layered Architecture</p>
         <img src="imgs/layer-bigball1.png" />
         <p class="fragment">¿y... acá? <span class="fragment">Esto sucede si no tenemos disciplina!</span></p>
@@ -219,23 +279,8 @@
         <img src="imgs/layer-bigball3.png" />
         <p>¿y... acá? <span>Esto sucede si no tenemos disciplina!</span></p>
       </section>
-
-      <section id="packages">
-        <p class="titulochico">Estructura de Layers (Capas)</p>
-        <p class="fragment chico">¿Existe en Java la keyword Layer?</p>
-        <p class="fragment chico">
-          <b>Debemos</b> encontrar en el lenguaje de programación
-          que utilicemos, que abstracción (estructura sintáctica) podemos
-          utilizar para crear éstas capas.
-        </p>
-        <p class="fragment">¿Cuáles son las opciones en Java?</p>
-        <p class="fragment">
-          Desde Java v1, los <u>paquetes</u>. Java v9 incorporó la
-          construcción sintáctica <u>module</u>.
-        </p>
-      </section>
-
-      <section id="packages">
+ -->
+        <!--       <section id="packages">
         <p class="titulochico">Estructuras de Capas</p>
         <p class="fragment">
           Ok. Tenemos que estructurar aplicaciones Java utilizando paquetes. ¿Qué opciones tengo?
@@ -243,9 +288,9 @@
         <p class="fragment">
           Arquitectura en <b>Capas</b> y Arquitectura <b>Hexagonal</b>
         </p>
-      </section>
+      </section> -->
 
-      <!--      <section id="packages">
+        <!--      <section id="packages">
         <p class="titulochico">Estructuras de Componentes o Módulos</p>
         <p class="fragment">
           Además, ni bien abro un proyecto tengo que ver su estructura bien clara. Debe ser <b>evidente</b> que estilo
@@ -264,27 +309,18 @@
       
 -->
 
-      <section id="packages">
-        <p class="titulomaschico">Arquitectura en Capas / Layers</p>
-        <img src="imgs/layered-system.png" />
-        <p class="fragment">
-          ¿Cómo creo esta estructura con paquetes en Java?
-        </p>
-      </section>
-
-      <section id="packages">
+        <!--       <section id="packages">
         <p class="titulomaschico">Package by Layers</p>
         <img src="imgs/package-layers.png" />
-      </section>
+      </section> -->
 
-      <!--       <section id="packages">
+        <!--       <section id="packages">
         <p class="titulochico">Package by Layers (con modelo compartido)</p>
         <img src="imgs/package-layer-shared-model.png" />
       </section>
  -->
 
-
-      <section id="packages">
+        <!--       <section id="packages">
         <p class="titulochico">Arquitectura Hexagonal (o ports and adapters)</p>
         <img width="759" height="525" src="imgs/hexagonal-garrido.png" />
       </section>
@@ -294,8 +330,8 @@
         <p class="titulochico">Arquitectura Hexagonal (o ports and adapters)</p>
         <img src="imgs/package-hexagonal.png" />
       </section>
-
-      <!--
+ -->
+        <!--
       <section id="code">
         <p class="titulomaschico">Exceptions pertenecen a una capa</p>
         <img src="imgs/layers-exceptions.png"></img>
@@ -306,50 +342,56 @@
         <img src="imgs/layers-exceptions-2.png"></img>
       </section>
 -->
-      <section id="packages">
+
+        <!--        <section id="packages">
         <p class="titulomasmaschico">Exceptions en Hexagonal</p>
         <img width="320" height="530" src="imgs/hexagonal-exceptions.png"></img>
-      </section>
-
-      <section id="reglas">
-        <p class="titulomasmaschico">Reglas de Diseño</p>
-        <ul>
-          <li class="maschico fragment">Desde la UI, solo estoy acomplado al paquete <em>domain.portsin</em>.
-            <b><u>Nunca</u></b>
-            a clases dentro de <em>domain</em> ni <em>domain.portsout</em>.</li>
-          <li class="maschico fragment"><em>domain.portsin</em> y <em>domain.portsout</em> expone interfaces, con
-            parámetros con
-            datos primitivos (nunca objetos del modelo de dominio). Si requiriera de muchos parámetros puedo utilizar
-            Records para agruparlos.</li>
-          <li class="maschico fragment">En la UI, no realizo ningun tipo de lógica de negocios. Por cada acción (boton
-            en la UI o
-            similar), llamo a un solo método de un interfaz de <em>domain.portsin</em>.</li>
-            <li class="maschico fragment">Las validaciones son parte de la lógica de negocios, siempre va en la capa de dominio/negocio.</li>
-          <li class="maschico fragment">Los sub-paquetes de infrastructure deben estar acoplados a las interfaces en
-            <em>domain.portsin</em> o <em>domain.portsout</em>, nunca a algun clase de domain.
-          </li>
-          <li class="maschico fragment">Declaren todas las classes del modelo de dominio como <em>package-private</em>
-            (privadas
-            a la capa de negocio/modelo de dominio).</li>
-        </ul>
-      </section>
-
+      </section> -->
 
         <section id="reglas">
           <p class="titulomasmaschico">Reglas de Diseño</p>
           <ul>
-            <li>La tecnología de front-end <u>cambia</u> muy seguido. Lo mismo para tecnología de persistencia u otros servicios externos.</li>
-            <li>Éstas reglas faciltan los cambios.</li>
+            <li class="maschico fragment">
+              Desde la UI, solo estoy acomplado al paquete
+              <em>model</em>. Nunca a otros paquetes.
+            </li>
+            <li class="maschico fragment">
+              <em>Model</em> expone interfaces, con métodos con parámetros de
+              entrada con datos primitivos (nunca objetos del modelo de
+              dominio).
+            </li>
+            <li class="maschico fragment">
+              <em>Model</em> no depende de nadie.
+            </li>
+            <li class="maschico fragment">
+              Para esto creamos interfaces que van dentro del paquete del modelo
+              y son implementadas por el paquete de acceso a datos u otros
+              servicios.
+            </li>
+            <li class="maschico fragment">
+              En la UI, no realizo ningun tipo de lógica de negocios. Por cada
+              acción (boton en la UI o similar), llamo a <b>un</b> solo método
+              de una interfaz de <em>model</em>.
+            </li>
+            <li class="maschico fragment">
+              Las validaciones son parte de la lógica de negocios, siempre va en
+              la capa de dominio/negocio.
+            </li>
+            <li class="maschico fragment">
+              El paquete del Main es el único que inyecta las dependencias
+              (clases concretas) en las clases de los diferentes paquetes.
+            </li>
           </ul>
-      </section>
+        </section>
 
-      <section id="reglas">
-        <p class="titulomasmaschico">Fuentes de ejemplo</p>
-          <a href="https://github.com/enriquemolinari/oop2-layering">https://github.com/enriquemolinari/oop2-layering</a>
-    </section>
-    
+        <section id="reglas">
+          <p class="titulomasmaschico">Fuentes de ejemplo</p>
+          <a href="https://github.com/enriquemolinari/oop2-layering"
+            >https://github.com/enriquemolinari/oop2-layering</a
+          >
+        </section>
 
-      <!--<section id="code">
+        <!--<section id="code">
         <p class="titulomaschico">Exceptions, ¿Cómo manejarlas?</p>
         <p class="fragment">Cada capa atrapa y lanza su exception o el framework que uso atrapa cualquiera y muestra
           mensaje</p>
@@ -364,52 +406,48 @@
  }
 }</code></pre>
       </section>-->
-
-
-
+      </div>
     </div>
-  </div>
 
-  <script src="dist/reveal.js"></script>
-  <script src="plugin/notes/notes.js"></script>
-  <script src="plugin/markdown/markdown.js"></script>
-  <script src="plugin/highlight/highlight.js"></script>
-  <script src="plugin/simplemenu/simplemenu.js"></script>
-  <script src="plugin/relativenumber/relativenumber.js"></script>
-  <script src="plugin/math/math.js"></script>
-  <script>
-    window.onload = function () {
-      let today = new Date().toLocaleDateString();
-      let obj = document.getElementById("hoy");
-      document.getElementById("hoy").innerText = today;
-    };
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/simplemenu/simplemenu.js"></script>
+    <script src="plugin/relativenumber/relativenumber.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script>
+      window.onload = function () {
+        let today = new Date().toLocaleDateString();
+        let obj = document.getElementById("hoy");
+        document.getElementById("hoy").innerText = today;
+      };
 
-    Reveal.addEventListener("slidechanged", function (event) {
-      if (event.indexh > 0) {
-        document.querySelector(".reveal .footer").style.display = "block";
-      } else {
-        document.querySelector(".reveal .footer").style.display = "none";
-      }
-    });
+      Reveal.addEventListener("slidechanged", function (event) {
+        if (event.indexh > 0) {
+          document.querySelector(".reveal .footer").style.display = "block";
+        } else {
+          document.querySelector(".reveal .footer").style.display = "none";
+        }
+      });
 
-    Reveal.addEventListener("ready", function (event) {
-      if (event.indexh === 0)
-        document.querySelector(".reveal .footer").style.display = "none";
-    });
+      Reveal.addEventListener("ready", function (event) {
+        if (event.indexh === 0)
+          document.querySelector(".reveal .footer").style.display = "none";
+      });
 
-    Reveal.initialize({
-      hash: true,
-      slideNumber: "c/t",
-      plugins: [
-        RevealMarkdown,
-        RevealHighlight,
-        RevealNotes,
-        RelativeNumber,
-        Simplemenu,
-        RevealMath.KaTeX,
-      ],
-    });
-  </script>
-</body>
-
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RelativeNumber,
+          Simplemenu,
+          RevealMath.KaTeX,
+        ],
+      });
+    </script>
+  </body>
 </html>
