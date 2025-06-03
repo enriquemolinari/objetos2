@@ -178,9 +178,9 @@
       <div class="menubar line">
         <div class="slide-number"></div>
         <ul class="menu">
-          <li><a href="#/quees">¿Qué es un Framework?</a></li>
-          <li><a href="#/quees2">¿Qué es un Framework OO?</a></li>
-          <li><a href="#/frwvslibreria">Framework vs Librería</a></li>
+          <li><a href="#/quees">¿Qué es un Framework OO?</a></li>
+<!--           <li><a href="#/quees2">¿Qué es un Framework OO?</a></li>
+ -->          <li><a href="#/frwvslibreria">Framework vs Librería</a></li>
           <li><a href="#/PuntosExtension">Puntos de Extensión</a></li>
           <li><a href="#/TiposdeFrameworksOO">Tipos de Frameworks OO</a></li>
           <li><a href="#/patvsfrw">Patrones vs Frameworks</a></li>
@@ -200,37 +200,49 @@
           <p id="hoy" class="autor fechahoy"></p>
         </section>
 
-        <section id="quees">
+<!--         <section id="quees">
 					<h2>¿Cuál es el objetivo principal por el cual uno desarrollaría un framework?</h2>
-				</section>
-        <section id="quees">
+				</section> -->
+<!--         <section id="quees">
 					<h2>¿Qué es un Framework?</h2>
-				</section>
+				</section> -->
 				<section id="quees">
-					<h3 class="titulocolor">Un Framework...</h3>
+					<h3 class="titulocolor">Reuso de Código...</h3>
 					<br/>
-					<p class="fragment">Una técnica particular de implementación para construir <strong>familias de aplicaciones</strong></p>
+          <p class="fragment">Previo a la existencia de los frameworks, el mecanismo de reuso de código era el copy/paste y mejor aun, las librerías.</p>
+          <p class="fragment">Sin embargo, las librerías son mas específicas, para problemas concretos.</p>
+<!-- 					<p class="fragment">Una técnica particular de implementación para construir <strong>familias de aplicaciones</strong></p>
 					<p class="fragment">Familias donde el <strong>dominio del problema</strong> es lo común.</p>
-					<p class="fragment">Familias donde la <strong>infraestructura</strong> es lo común.</p>
+					<p class="fragment">Familias donde la <strong>infraestructura</strong> es lo común.</p> -->
+          <p class="fragment">Los <b>frameworks</b> nos brindan una mayor capacidad de reuso de código.</p>
+				</section>
+
+        <section id="quees">
+					<h3 class="titulocolor">Reuso de Código...</h3>
+					<br/>
+          <p class="fragment">Resulta que gracias a la herencia, el binding dinámico y el polimorfismo...</p>
+          <p class="fragment">Es posible construir software <b>incompleto</b> o <b>semi-acabado</b> que se completa a travéz de la subclasificacion, la composición o el "descubrimiento" dinámico.</p>
+<!-- 					<p class="fragment">Una técnica particular de implementación para construir <strong>familias de aplicaciones</strong></p>
+					<p class="fragment">Familias donde el <strong>dominio del problema</strong> es lo común.</p>
+					<p class="fragment">Familias donde la <strong>infraestructura</strong> es lo común.</p> -->
+				</section>
+
+				<section id="quees">
+					<h3 class="titulocolor">Un Framework OO...</h3>
+						<p class="fragment">Un conjunto de clases y sus colaboraciones que forman un <strong>Diseño Común</strong> y una <strong>Implementación incompleta</strong> de una solución genérica (reusable y extensible) dentro de un familia de aplicaciones.</p>
+<!-- 						<li class="fragment">Es una solución genérica para un conjunto de problemas similares.</li> -->
 				</section>
 				<section id="quees">
-					<h3 class="titulocolor">Dada una familia de aplicaciones, un Framework...</h3>
+					<h3 class="titulocolor">Un Framework OO...</h3>
 					<ul>
-						<li class="fragment">Representa un <strong>Diseño Común</strong> y una <strong>Implementación parcial</strong> de las aplicaciones dentro de dicha familia.</li>
-						<li class="fragment">Es una solución genérica para un conjunto de problemas similares</li>
-					</ul>
-				</section>
-				<section id="quees">
-					<h3 class="titulocolor">Dada una familia de aplicaciones, un Framework...</h3>
-					<ul>
-						<li class="fragment"><strong>Incompleto por naturaleza</strong>: funcionalidad específica desarrollada por el <w>usuario</w> del framework</li>
-						<li class="fragment">Las "partes" a completar llevan el nombre de <strong>métodos hook</strong> (puntos de extensión o hot spots)</li>
+						<li class="fragment"><b>¿Familia de aplicaciones?</b>: Aplicaciones Web, Sistemas de ventanas, Tésting Automatizado, Persitencia, etc.</li>
+						<li class="fragment"><b>¿Incompleto?</b> Las "partes" a completar se ofrecen a travéz de la herencia, el binding dinámico y el descubrimiento. Llevan el nombre de <strong>puntos de extensión</strong> (o métodos hook).</li>
 					</ul>
 				</section>
 				<section id="quees2">
 					<h3 class="titulocolor">Y...<span class="fragment"> ¿Qué es un Framework Orientado a Objetos?</span> </h3>
 					<ul>
-						<li class="fragment">Una <strong>conjunto de clases (mayormente abstractas)</strong>.</li>
+						<li class="fragment">Un <strong>conjunto de clases (mayormente abstractas)</strong>.</li>
 						<li class="fragment">Más los <strong>hooks</strong> o <strong>puntos de extensión</strong>.</li>
 						<li class="fragment">La <strong>interacción definida</strong> entre las clases del framework y las especializaciones.</li>
 						<li class="fragment"><strong>Documentación</strong> de como uso y <u>extiendo</u> el framework.</li>
@@ -243,7 +255,7 @@
 						<li class="fragment">El framework también puede proveer clases concretas como librerías.</li>
 					</ul>
 				</section>
-				<section id="quees2">
+<!-- 				<section id="quees2">
 					<h3 class="titulocolor">Frameworks OO</h3>
 					<p><i><strong>"Programando para customizar"</strong></i></p>
 					<div style="position:relative">
@@ -254,15 +266,15 @@
 		          <img src="imgs/framework-customizado.png" style="background:none; border:none; box-shadow:none;">
 		        </p>
     			</div>
-				</section>
+				</section> -->
 
-				<section id="quees2">
+				<section id="quees">
 					<h3 class="titulocolor">Frameworks OO</h3>
 					<p><i>Otra vista del código del framwork vs el código de la aplicación</i></p>
 		      	<img src="imgs/framework-app2.png" style="background:none; border:none; box-shadow:none;">
 				</section>
 
-				<section id="quees2">
+				<section id="quees">
 					<h3 class="titulocolor">Frameworks OO</h3>
 					<p><i><strong>Si implementamos una aplicación usando un framework tenemos: </strong></i></p>
 					<ul>
